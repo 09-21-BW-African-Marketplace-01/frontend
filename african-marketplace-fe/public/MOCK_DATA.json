@@ -3,7 +3,7 @@
         "item_id": 1,
         "user_id": 248,
         "market_name": "Nienow and Sons",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Dry Ice",
         "item_price": 27
     },
@@ -11,7 +11,7 @@
         "item_id": 2,
         "user_id": 297,
         "market_name": "Bailey, Langosh and Bayer",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Beer - Tetleys",
         "item_price": 53
     },
@@ -19,7 +19,7 @@
         "item_id": 3,
         "user_id": 968,
         "market_name": "Nikolaus Inc",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Cookies - Englishbay Chochip",
         "item_price": 78
     },
@@ -27,7 +27,7 @@
         "item_id": 4,
         "user_id": 753,
         "market_name": "Gerlach-Donnelly",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Wine - White, Riesling, Henry Of",
         "item_price": 59
     },
@@ -35,7 +35,7 @@
         "item_id": 5,
         "user_id": 8,
         "market_name": "Heaney, Bashirian and Mraz",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Wine - Stoneliegh Sauvignon",
         "item_price": 46
     },
@@ -43,7 +43,7 @@
         "item_id": 6,
         "user_id": 669,
         "market_name": "Schulist and Sons",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Cheese - Brie, Cups 125g",
         "item_price": 30
     },
@@ -51,7 +51,7 @@
         "item_id": 7,
         "user_id": 549,
         "market_name": "Orn-Kling",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Honey - Comb",
         "item_price": 38
     },
@@ -59,7 +59,7 @@
         "item_id": 8,
         "user_id": 16,
         "market_name": "O'Keefe Inc",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Appetizer - Escargot Puff",
         "item_price": 44
     },
@@ -67,7 +67,7 @@
         "item_id": 9,
         "user_id": 681,
         "market_name": "Kuhic-O'Kon",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Longos - Chicken Caeser Salad",
         "item_price": 18
     },
@@ -75,7 +75,7 @@
         "item_id": 10,
         "user_id": 549,
         "market_name": "Predovic-Abshire",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Beer - Rickards Red",
         "item_price": 40
     },
@@ -83,7 +83,7 @@
         "item_id": 11,
         "user_id": 177,
         "market_name": "Reilly Inc",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Energy Drink",
         "item_price": 46
     },
@@ -91,7 +91,7 @@
         "item_id": 12,
         "user_id": 747,
         "market_name": "Daniel, Gulgowski and Ruecker",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Pineapple - Canned, Rings",
         "item_price": 18
     },
@@ -99,7 +99,7 @@
         "item_id": 13,
         "user_id": 788,
         "market_name": "Watsica, Bayer and Feil",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Sour Puss - Tangerine",
         "item_price": 82
     },
@@ -107,7 +107,7 @@
         "item_id": 14,
         "user_id": 339,
         "market_name": "Hartmann-Dicki",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Chocolate - Compound Coating",
         "item_price": 84
     },
@@ -115,7 +115,7 @@
         "item_id": 15,
         "user_id": 262,
         "market_name": "Stehr, Streich and Wiza",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Lamb Rack - Ontario",
         "item_price": 94
     },
@@ -123,7 +123,7 @@
         "item_id": 16,
         "user_id": 374,
         "market_name": "Johns and Sons",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Oysters - Smoked",
         "item_price": 96
     },
@@ -131,7 +131,7 @@
         "item_id": 17,
         "user_id": 785,
         "market_name": "Ankunding, Lemke and Lang",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Pastry - Key Limepoppy Seed Tea",
         "item_price": 57
     },
@@ -139,7 +139,7 @@
         "item_id": 18,
         "user_id": 504,
         "market_name": "Koelpin and Sons",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Arizona - Green Tea",
         "item_price": 6
     },
@@ -147,7 +147,7 @@
         "item_id": 19,
         "user_id": 571,
         "market_name": "Wilderman, Carter and Douglas",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Jam - Marmalade, Orange",
         "item_price": 61
     },
@@ -155,7 +155,7 @@
         "item_id": 20,
         "user_id": 210,
         "market_name": "King and Sons",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Lobak",
         "item_price": 56
     },
@@ -163,7 +163,7 @@
         "item_id": 21,
         "user_id": 56,
         "market_name": "Lebsack-Schaefer",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Saskatoon Berries - Frozen",
         "item_price": 65
     },
@@ -171,7 +171,7 @@
         "item_id": 22,
         "user_id": 958,
         "market_name": "Raynor LLC",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Curry Paste - Green Masala",
         "item_price": 41
     },
@@ -179,7 +179,7 @@
         "item_id": 23,
         "user_id": 718,
         "market_name": "Leannon Inc",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Sausage - Liver",
         "item_price": 85
     },
@@ -187,7 +187,7 @@
         "item_id": 24,
         "user_id": 536,
         "market_name": "McClure Inc",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Cup Translucent 9 Oz",
         "item_price": 84
     },
@@ -195,7 +195,7 @@
         "item_id": 25,
         "user_id": 51,
         "market_name": "Raynor, Sipes and Hodkiewicz",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Napkin - Beverage 1 Ply",
         "item_price": 31
     },
@@ -203,7 +203,7 @@
         "item_id": 26,
         "user_id": 999,
         "market_name": "Daniel-Cormier",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Bread Crumbs - Panko",
         "item_price": 44
     },
@@ -211,7 +211,7 @@
         "item_id": 27,
         "user_id": 188,
         "market_name": "Emard, Bernier and Corwin",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Stock - Fish",
         "item_price": 47
     },
@@ -219,7 +219,7 @@
         "item_id": 28,
         "user_id": 591,
         "market_name": "Kirlin, Crooks and Torp",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Vol Au Vents",
         "item_price": 3
     },
@@ -227,7 +227,7 @@
         "item_id": 29,
         "user_id": 241,
         "market_name": "Fadel and Sons",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Shrimp - 21/25, Peel And Deviened",
         "item_price": 72
     },
@@ -235,7 +235,7 @@
         "item_id": 30,
         "user_id": 412,
         "market_name": "Kemmer-Goldner",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Sansho Powder",
         "item_price": 38
     },
@@ -243,7 +243,7 @@
         "item_id": 31,
         "user_id": 755,
         "market_name": "Bernhard Group",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Juice - Happy Planet",
         "item_price": 8
     },
@@ -251,7 +251,7 @@
         "item_id": 32,
         "user_id": 565,
         "market_name": "Mraz-Trantow",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Tomatoes - Grape",
         "item_price": 41
     },
@@ -259,7 +259,7 @@
         "item_id": 33,
         "user_id": 42,
         "market_name": "Kutch and Sons",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Plums - Red",
         "item_price": 73
     },
@@ -267,7 +267,7 @@
         "item_id": 34,
         "user_id": 828,
         "market_name": "Jacobson Inc",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Hand Towel",
         "item_price": 24
     },
@@ -275,7 +275,7 @@
         "item_id": 35,
         "user_id": 315,
         "market_name": "Runolfsdottir-Effertz",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Cheese - Sheep Milk",
         "item_price": 41
     },
@@ -283,7 +283,7 @@
         "item_id": 36,
         "user_id": 624,
         "market_name": "Stracke LLC",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Mushroom - Chantrelle, Fresh",
         "item_price": 55
     },
@@ -291,7 +291,7 @@
         "item_id": 37,
         "user_id": 919,
         "market_name": "McGlynn, Hane and Anderson",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Soup Campbells Turkey Veg.",
         "item_price": 37
     },
@@ -299,7 +299,7 @@
         "item_id": 38,
         "user_id": 8,
         "market_name": "Mohr, Hodkiewicz and Klein",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Beans - Kidney, Red Dry",
         "item_price": 76
     },
@@ -307,7 +307,7 @@
         "item_id": 39,
         "user_id": 494,
         "market_name": "Funk Inc",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Sauce - Soy Low Sodium - 3.87l",
         "item_price": 24
     },
@@ -315,7 +315,7 @@
         "item_id": 40,
         "user_id": 74,
         "market_name": "Rodriguez Inc",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Appetizer - Mango Chevre",
         "item_price": 31
     },
@@ -323,7 +323,7 @@
         "item_id": 41,
         "user_id": 367,
         "market_name": "Dicki, Nader and Durgan",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Numi - Assorted Teas",
         "item_price": 16
     },
@@ -331,7 +331,7 @@
         "item_id": 42,
         "user_id": 31,
         "market_name": "Gibson-Nienow",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Grapes - Green",
         "item_price": 88
     },
@@ -339,7 +339,7 @@
         "item_id": 43,
         "user_id": 998,
         "market_name": "Spinka, Cormier and Gutkowski",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Sugar - Crumb",
         "item_price": 53
     },
@@ -347,7 +347,7 @@
         "item_id": 44,
         "user_id": 548,
         "market_name": "Marquardt, Nikolaus and Schiller",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Chocolate - Mi - Amere Semi",
         "item_price": 100
     },
@@ -355,7 +355,7 @@
         "item_id": 45,
         "user_id": 774,
         "market_name": "Wiegand-Mayert",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Syrup - Monin, Swiss Choclate",
         "item_price": 47
     },
@@ -363,7 +363,7 @@
         "item_id": 46,
         "user_id": 347,
         "market_name": "Mosciski-Kutch",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Pastry - Mini French Pastries",
         "item_price": 65
     },
@@ -371,7 +371,7 @@
         "item_id": 47,
         "user_id": 547,
         "market_name": "Wilderman, Monahan and Quitzon",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Tomato - Tricolor Cherry",
         "item_price": 19
     },
@@ -379,7 +379,7 @@
         "item_id": 48,
         "user_id": 868,
         "market_name": "Larson Inc",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Beans - Kidney, Red Dry",
         "item_price": 90
     },
@@ -387,7 +387,7 @@
         "item_id": 49,
         "user_id": 482,
         "market_name": "Kunze Group",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Lemonade - Pineapple Passion",
         "item_price": 30
     },
@@ -395,7 +395,7 @@
         "item_id": 50,
         "user_id": 449,
         "market_name": "Kiehn Group",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Coffee - Decaffeinato Coffee",
         "item_price": 98
     },
@@ -403,7 +403,7 @@
         "item_id": 51,
         "user_id": 974,
         "market_name": "Heathcote LLC",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Pork - Bacon,back Peameal",
         "item_price": 90
     },
@@ -411,7 +411,7 @@
         "item_id": 52,
         "user_id": 218,
         "market_name": "Weimann-Hauck",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Skirt - 24 Foot",
         "item_price": 53
     },
@@ -419,7 +419,7 @@
         "item_id": 53,
         "user_id": 232,
         "market_name": "Brekke Inc",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Lettuce - Belgian Endive",
         "item_price": 70
     },
@@ -427,7 +427,7 @@
         "item_id": 54,
         "user_id": 150,
         "market_name": "Cummings LLC",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Table Cloth 90x90 Colour",
         "item_price": 53
     },
@@ -435,7 +435,7 @@
         "item_id": 55,
         "user_id": 704,
         "market_name": "MacGyver and Sons",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Brocolinni - Gaylan, Chinese",
         "item_price": 20
     },
@@ -443,7 +443,7 @@
         "item_id": 56,
         "user_id": 96,
         "market_name": "Schmitt, Ledner and Ratke",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Cleaner - Pine Sol",
         "item_price": 23
     },
@@ -451,7 +451,7 @@
         "item_id": 57,
         "user_id": 806,
         "market_name": "Hagenes-Schultz",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Rolled Oats",
         "item_price": 46
     },
@@ -459,7 +459,7 @@
         "item_id": 58,
         "user_id": 633,
         "market_name": "Legros Group",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Muffin - Banana Nut Individual",
         "item_price": 97
     },
@@ -467,7 +467,7 @@
         "item_id": 59,
         "user_id": 367,
         "market_name": "Ledner-Towne",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Gloves - Goldtouch Disposable",
         "item_price": 39
     },
@@ -475,7 +475,7 @@
         "item_id": 60,
         "user_id": 588,
         "market_name": "Kohler, Kris and Price",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Cake Circle, Paprus",
         "item_price": 96
     },
@@ -483,7 +483,7 @@
         "item_id": 61,
         "user_id": 396,
         "market_name": "Paucek-Sawayn",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Butter - Salted",
         "item_price": 4
     },
@@ -491,7 +491,7 @@
         "item_id": 62,
         "user_id": 691,
         "market_name": "Beatty-Bechtelar",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Wine - Toasted Head",
         "item_price": 61
     },
@@ -499,7 +499,7 @@
         "item_id": 63,
         "user_id": 707,
         "market_name": "Wolf-Schamberger",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Hold Up Tool Storage Rack",
         "item_price": 91
     },
@@ -507,7 +507,7 @@
         "item_id": 64,
         "user_id": 603,
         "market_name": "Balistreri Inc",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Wine - White, Ej",
         "item_price": 93
     },
@@ -515,7 +515,7 @@
         "item_id": 65,
         "user_id": 855,
         "market_name": "Rogahn Inc",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Leeks - Baby, White",
         "item_price": 29
     },
@@ -523,7 +523,7 @@
         "item_id": 66,
         "user_id": 584,
         "market_name": "Hand-Champlin",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Ice Cream - Super Sandwich",
         "item_price": 52
     },
@@ -531,7 +531,7 @@
         "item_id": 67,
         "user_id": 928,
         "market_name": "Lowe Group",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Ranchero - Primerba, Paste",
         "item_price": 49
     },
@@ -539,7 +539,7 @@
         "item_id": 68,
         "user_id": 840,
         "market_name": "Hintz, Torp and Marks",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Pepper Squash",
         "item_price": 7
     },
@@ -547,7 +547,7 @@
         "item_id": 69,
         "user_id": 48,
         "market_name": "Zboncak-Wilkinson",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Wine - White, Colubia Cresh",
         "item_price": 33
     },
@@ -555,7 +555,7 @@
         "item_id": 70,
         "user_id": 774,
         "market_name": "Steuber-Koch",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Extract - Lemon",
         "item_price": 68
     },
@@ -563,7 +563,7 @@
         "item_id": 71,
         "user_id": 665,
         "market_name": "Runolfsson-Marvin",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Lettuce - Iceberg",
         "item_price": 27
     },
@@ -571,7 +571,7 @@
         "item_id": 72,
         "user_id": 550,
         "market_name": "Schmeler-Lind",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Island Oasis - Banana Daiquiri",
         "item_price": 62
     },
@@ -579,7 +579,7 @@
         "item_id": 73,
         "user_id": 499,
         "market_name": "Oberbrunner and Sons",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Sausage - Blood Pudding",
         "item_price": 16
     },
@@ -587,7 +587,7 @@
         "item_id": 74,
         "user_id": 287,
         "market_name": "Weber-Batz",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Piping Jelly - All Colours",
         "item_price": 39
     },
@@ -595,7 +595,7 @@
         "item_id": 75,
         "user_id": 992,
         "market_name": "White-Hammes",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Beer - Muskoka Cream Ale",
         "item_price": 41
     },
@@ -603,7 +603,7 @@
         "item_id": 76,
         "user_id": 939,
         "market_name": "Lesch and Sons",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Chicken - Whole",
         "item_price": 37
     },
@@ -611,7 +611,7 @@
         "item_id": 77,
         "user_id": 225,
         "market_name": "Borer-Kihn",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Pate - Liver",
         "item_price": 32
     },
@@ -619,7 +619,7 @@
         "item_id": 78,
         "user_id": 368,
         "market_name": "Jerde, Hessel and Runolfsdottir",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "V8 - Berry Blend",
         "item_price": 7
     },
@@ -627,7 +627,7 @@
         "item_id": 79,
         "user_id": 919,
         "market_name": "Veum LLC",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Pie Box - Cello Window 2.5",
         "item_price": 8
     },
@@ -635,7 +635,7 @@
         "item_id": 80,
         "user_id": 375,
         "market_name": "Lesch Inc",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Mushrooms - Honey",
         "item_price": 34
     },
@@ -643,7 +643,7 @@
         "item_id": 81,
         "user_id": 481,
         "market_name": "Kohler Inc",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Shallots",
         "item_price": 54
     },
@@ -651,7 +651,7 @@
         "item_id": 82,
         "user_id": 440,
         "market_name": "Graham-Abshire",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Pork Salted Bellies",
         "item_price": 38
     },
@@ -659,7 +659,7 @@
         "item_id": 83,
         "user_id": 538,
         "market_name": "Kunde, Paucek and Hammes",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Soup - Boston Clam Chowder",
         "item_price": 3
     },
@@ -667,7 +667,7 @@
         "item_id": 84,
         "user_id": 771,
         "market_name": "Volkman-Gusikowski",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Kiwi",
         "item_price": 88
     },
@@ -675,7 +675,7 @@
         "item_id": 85,
         "user_id": 695,
         "market_name": "Conn LLC",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Muffin Batt - Choc Chk",
         "item_price": 67
     },
@@ -683,7 +683,7 @@
         "item_id": 86,
         "user_id": 318,
         "market_name": "Ortiz Group",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Vermacelli - Sprinkles, Assorted",
         "item_price": 80
     },
@@ -691,7 +691,7 @@
         "item_id": 87,
         "user_id": 500,
         "market_name": "Lemke and Sons",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Anisette - Mcguiness",
         "item_price": 11
     },
@@ -699,7 +699,7 @@
         "item_id": 88,
         "user_id": 738,
         "market_name": "Raynor and Sons",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Appetizer - Cheese Bites",
         "item_price": 55
     },
@@ -707,7 +707,7 @@
         "item_id": 89,
         "user_id": 213,
         "market_name": "Bailey and Sons",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Creme De Menth - White",
         "item_price": 63
     },
@@ -715,7 +715,7 @@
         "item_id": 90,
         "user_id": 566,
         "market_name": "Dooley, McKenzie and Dare",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Oneshot Automatic Soap System",
         "item_price": 79
     },
@@ -723,7 +723,7 @@
         "item_id": 91,
         "user_id": 216,
         "market_name": "Buckridge and Sons",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Bread - Italian Roll With Herbs",
         "item_price": 91
     },
@@ -731,7 +731,7 @@
         "item_id": 92,
         "user_id": 31,
         "market_name": "Beier, Langworth and Pagac",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Milk - Condensed",
         "item_price": 60
     },
@@ -739,7 +739,7 @@
         "item_id": 93,
         "user_id": 228,
         "market_name": "Bogisich, Bartell and Rutherford",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Glycerine",
         "item_price": 97
     },
@@ -747,7 +747,7 @@
         "item_id": 94,
         "user_id": 161,
         "market_name": "Morissette, McCullough and Williamson",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Plaintain",
         "item_price": 83
     },
@@ -755,7 +755,7 @@
         "item_id": 95,
         "user_id": 148,
         "market_name": "Daniel Inc",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Beef - Top Butt",
         "item_price": 81
     },
@@ -763,7 +763,7 @@
         "item_id": 96,
         "user_id": 673,
         "market_name": "Haag, Leannon and Pfeffer",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Bread - Dark Rye, Loaf",
         "item_price": 35
     },
@@ -771,7 +771,7 @@
         "item_id": 97,
         "user_id": 973,
         "market_name": "Hilll, Blick and Hirthe",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Figs",
         "item_price": 43
     },
@@ -779,7 +779,7 @@
         "item_id": 98,
         "user_id": 547,
         "market_name": "Reynolds-Huel",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Tart - Lemon",
         "item_price": 71
     },
@@ -787,7 +787,7 @@
         "item_id": 99,
         "user_id": 792,
         "market_name": "Wintheiser Group",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Mustard - Dry, Powder",
         "item_price": 20
     },
@@ -795,7 +795,7 @@
         "item_id": 100,
         "user_id": 456,
         "market_name": "O'Reilly-Mitchell",
-        "item_description": null,
+        "item_description": "this is a test",
         "item_name": "Cake Sheet Combo Party Pack",
         "item_price": 43
     }

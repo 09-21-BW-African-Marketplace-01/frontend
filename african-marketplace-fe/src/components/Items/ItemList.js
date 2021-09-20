@@ -1,6 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { connect } from 'react-redux'
 import { fetchItems } from '../../actions'
+import { useTable, useSortBy, useGlobalFilter, usePagination } from 'react-table'
+import { COLUMNS } from './columns'
+import GlobalFilter from './GlobalFilter'
+
+
 
 const ItemList = (props) => {
     const{items, isFetching, error, fetchItems} = props
@@ -8,6 +13,32 @@ const ItemList = (props) => {
     useEffect(() => {
         fetchItems()
     },[])
+    
+    //this ensures the data isnt recreated on every render, 
+    const columns = useMemo(() => COLUMNS, [])
+    const data = useMemo(() => items, [items])
+
+
+    const {
+        getTableProps,
+        getTableBodyProps, 
+        headerGroups, 
+        page, 
+        nextPage,
+        canNextPage,
+        previousPage,
+        canPreviousPage,
+        pageOptions,
+        prepareRow,
+        state,
+        setGlobalFilter,
+    } = useTable({
+        columns,
+        data,
+    },useGlobalFilter, useSortBy, usePagination)
+
+    const { globalFilter, pageIndex } = state
+
 
     if(isFetching){
         return <h3>Fetching data...</h3>
@@ -17,20 +48,57 @@ const ItemList = (props) => {
         return <h1>ERROR: {error}</h1>
     }
 
-    console.log(items)
 
+    
     return (
-        <div>
-            {
-                items.map((item, idx) => {
-                    return(
-                        <div key={idx}>
-                            <p>{item.item_name}</p>
-                        </div>
-                    )
-                })
-            }
-        </div>
+        <>
+        <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
+            <table {...getTableProps()}>
+                <thead>
+                    {
+                        headerGroups.map(headerGroup => (
+                        <tr {...headerGroup.getHeaderGroupProps()}>
+                            {
+                            headerGroup.headers.map(columns => (
+                                <th {...columns.getHeaderProps(columns.getSortByToggleProps())}>{columns.render('Header')}
+                                <span>
+                                    {
+                                        columns.isSorted ? (columns.isSortedDesc ? ' v' : ' ^') : ''
+                                    }
+                                </span>
+                                </th>
+                            ))
+                            }
+                        </tr>
+                        ))
+                    }
+                </thead>
+                <tbody {...getTableBodyProps()}>
+                    {
+                        page.map(row => {
+                        prepareRow(row)
+                        return(
+                            <tr {...row.getRowProps()}>
+                            {row.cells.map((cell) => {
+                                return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                            })}
+                            </tr>
+                        )
+                        })
+                    }
+                </tbody>
+            </table>
+            <div>
+                <span>
+                    Page{' '}
+                    <strong>
+                        {pageIndex + 1 } of {pageOptions.length}
+                    </strong> {' '}
+                </span>
+                <button onClick={() => previousPage()} disabled={!canPreviousPage}>Previos</button>
+                <button onClick={() => nextPage()} disabled={!canNextPage}>Next</button>
+            </div>
+        </>
     )
 }
 
