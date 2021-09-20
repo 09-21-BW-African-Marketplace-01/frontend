@@ -1,4 +1,4 @@
-import './App.css';
+import React from 'react';
 import ItemList from './components/Items/ItemList';
 
 function App() {
@@ -7,6 +7,8 @@ function App() {
     <div className="App">
       <h1>African Marketplace</h1>
       < ItemList />
+
+
     </div>
   );
 }
