@@ -1,11 +1,37 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { fetchItems } from '../../actions'
 
-const ItemList = () => {
+const ItemList = (props) => {
+    const{items, isFetching, fetchItems} = props
+
+    useEffect(() => {
+        fetchItems()
+    },[])
+
+    console.log(items)
+
     return (
         <div>
-            
+            {
+                items.map((item, idx) => {
+                    return(
+                        <div key={idx}>
+                            <p>{item.item_name}</p>
+                        </div>
+                    )
+                })
+            }
         </div>
     )
 }
 
-export default ItemList
+const mapStateToProps = state => {
+    return({
+        items: state.items,
+        isFetching: state.isFetching,
+        error: state.error
+    })
+}
+
+export default connect(mapStateToProps, {fetchItems})(ItemList)
