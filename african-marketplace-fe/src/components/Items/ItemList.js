@@ -3,11 +3,19 @@ import { connect } from 'react-redux'
 import { fetchItems } from '../../actions'
 
 const ItemList = (props) => {
-    const{items, isFetching, fetchItems} = props
+    const{items, isFetching, error, fetchItems} = props
 
     useEffect(() => {
         fetchItems()
     },[])
+
+    if(isFetching){
+        return <h3>Fetching data...</h3>
+    }
+
+    if (error) {
+        return <h1>ERROR: {error}</h1>
+    }
 
     console.log(items)
 
