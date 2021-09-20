@@ -12,6 +12,7 @@ const ItemList = (props) => {
 
     useEffect(() => {
         fetchItems()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     
     //this ensures the data isnt recreated on every render, 
@@ -44,16 +45,16 @@ const ItemList = (props) => {
         return <h3>Fetching data...</h3>
     }
 
-    if (error) {
-        return <h1>ERROR: {error}</h1>
-    }
-
-
+    
+    
     
     return (
         <>
+            {
+                error && <div>Error: {error}</div>
+            }
         <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
-            <table {...getTableProps()}>
+            <table {...getTableProps()} style={{textAlign: 'center'}}>
                 <thead>
                     {
                         headerGroups.map(headerGroup => (

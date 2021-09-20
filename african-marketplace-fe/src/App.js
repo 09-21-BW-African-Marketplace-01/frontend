@@ -8,7 +8,6 @@ function App() {
       <h1>African Marketplace</h1>
       < ItemList />
 
-
     </div>
   );
 }

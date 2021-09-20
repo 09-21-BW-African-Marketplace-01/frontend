@@ -1,10 +1,82 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axiosWithAuth from '../../utils/axiosWithAuth'
+
+const initialFormValues = {
+    market_name: '',
+    item_description: '',
+    item_name: '',
+    item_price: ''
+}
 
 const AddItem = () => {
+    const [formValues, setFormValues] = useState(initialFormValues)
+
+    const handleChange = e => {
+        setFormValues({
+            ...formValues,
+            [e.target.name]:e.target.value
+        })
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        let newItem = {
+            market_name: formValues.market_name,
+            item_description: formValues.item_description,
+            item_name: formValues.item_name,
+            item_price: formValues.item_price
+        }
+        axiosWithAuth()
+            .post('', newItem)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+
+    }
+
     return (
-        <div>
-            
-        </div>
+            <form onSubmit={handleSubmit}>
+                <label>
+                    <input 
+                        type='text'
+                        name='market_name'
+                        value={formValues.market_name}
+                        onChange={handleChange}
+                        placeholder='market name'
+                    />
+                </label>
+                <label>
+                    <input 
+                        type='text'
+                        name='item_description'
+                        value={formValues.item_description}
+                        onChange={handleChange}
+                        placeholder='description of item'
+                    />
+                </label>
+                <label>
+                    <input 
+                        type='text'
+                        name='item_name'
+                        value={formValues.item_name}
+                        onChange={handleChange}
+                        placeholder='name of item'
+                    />
+                </label>
+                <label>
+                    <input 
+                        type='text'
+                        name='item_price'
+                        value={formValues.item_price}
+                        onChange={handleChange}
+                        placeholder='price'
+                    />
+                </label>
+                <button>Submit</button>
+            </form>
     )
 }
 
