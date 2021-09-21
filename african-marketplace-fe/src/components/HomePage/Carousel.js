@@ -4,6 +4,7 @@ import { images } from './CarouselData';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles({
@@ -11,6 +12,7 @@ const useStyles = makeStyles({
       width: '100%',
       height: 400,
       backgroundColor: 'black',
+      boxShadow: '0 8px 8px -4px',
     },
     carouselInner: {
         height: '100%',
@@ -57,6 +59,7 @@ const useStyles = makeStyles({
         top: '50%',
         msTransform: 'translateY(-50%)',
         transform: 'translateY(-50%)',
+        
     },
 })
 
@@ -77,7 +80,9 @@ const Carousel = () => {
                 </div>
             </div>
             <div className={classes.buttonContainer}>
-                <Button variant="contained" className={classes.button}>Visit the marketplace</Button>
+                <Button variant="contained" className={classes.button}>
+                    <Link to='markets' style={{textDecoration: 'none', color: 'white'}}>Visit the marketplace</Link>
+                </Button>
             </div>
         </div>
     )

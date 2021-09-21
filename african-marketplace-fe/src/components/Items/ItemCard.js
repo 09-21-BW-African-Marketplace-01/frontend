@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
     root: {
       minWidth: 300,
+      margin: 2,
     },
     title: {
       fontSize: '1rem',
