@@ -44,13 +44,37 @@ const EditItem = () => {
     return (
     <form onSubmit={handleSubmit}>
             <label>Market Name</label>
-                <input value={market_name} onChange={handleChange} name="market_name" type="text"/>
+                <input 
+                    value={market_name} 
+                    onChange={handleChange} 
+                    name="market_name" 
+                    type="text"
+                />
+
             <label>Item Description</label>
-            <input value={item_description} onChange={handleChange} name="item_description" type="text"/>    
-                <label>Item Name</label>
-            <input value={item_name} onChange={handleChange} name="item_name" type="text"/>       
-                <label>Item Price</label>
-            <input value={item_price} onChange={handleChange} name="item_price" type="number"/>  
+                <input 
+                    value={item_description} 
+                    onChange={handleChange} 
+                    name="item_description" 
+                    type="text"
+                />   
+
+            <label>Item Name</label>
+                <input 
+                    value={item_name} 
+                    onChange={handleChange} 
+                    name="item_name" 
+                    type="text"
+                />      
+
+            <label>Item Price</label>
+                <input 
+                    value={item_price} 
+                    onChange={handleChange} 
+                    name="item_price" 
+                    type="number"
+                />  
+                
         <button>Submit</button>
     </form>
     )
