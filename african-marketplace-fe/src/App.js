@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import Profile from './components/Profile';
 import Login from './components/Login';
 import Logout from './components/Logout';
+import HomePage from './components/HomePage';
 
 function App() {
   
@@ -17,7 +18,7 @@ function App() {
         <Route path='/profile/:id' component={Profile} />
         <Route path='/logout' component={Logout} />
         <Route path='/login' component={Login} />
-        <Route path='/' component={Login}/>
+        <Route path='/' component={HomePage}/>
       </Switch>
     </div>
   );

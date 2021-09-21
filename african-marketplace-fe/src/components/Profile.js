@@ -1,8 +1,11 @@
 import React from 'react';
 
-const Profile = () => {
+const Profile = (props) => {
+    console.log('profile props', props)
     return(
-        <div></div>
+        <div className='profile-card'>
+            
+        </div>
     )
 }
 export default Profile;

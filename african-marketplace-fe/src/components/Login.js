@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
@@ -40,7 +41,7 @@ const Login = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form>
 
                 <input 
                 type='text'
@@ -57,8 +58,8 @@ const Login = () => {
                 placeholder='password'
                 onChange={handleChange}
                 />
+                <Button onClick={handleSubmit}>Log in</Button>
                 {error ? <p>Error!</p> : ''}
-                <button>Log in</button>
             </form>
             
         </div>

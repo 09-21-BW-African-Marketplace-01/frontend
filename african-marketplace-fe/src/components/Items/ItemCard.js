@@ -43,7 +43,7 @@ const ItemCard = (props) => {
 
     return (
         
-        <div className={classes.div}>
+        <div className={classes.div} >
             {
                 error && <div>Error: {error}</div>
             }
