@@ -1,12 +1,12 @@
 import React from 'react';
-import ItemCard from './components/Items/ItemCard';
+import HomePage from './components/HomePage/HomePage';
 
 function App() {
   
   return (
     <div className="App">
       <h1>African Marketplace</h1>
-      < ItemCard />
+      < HomePage />
     </div>
   );
 }
