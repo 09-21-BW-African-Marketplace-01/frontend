@@ -1,12 +1,24 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+
 import ItemCard from './components/Items/ItemCard';
+import NavBar from './components/NavBar';
+import Profile from './components/Profile';
+import Login from './components/Login';
+import Logout from './components/Logout';
 
 function App() {
   
   return (
     <div className="App">
-      <h1>African Marketplace</h1>
-      < ItemCard />
+      <NavBar />
+      <ItemCard />
+      <Switch>
+        <Route path='/profile/:id' component={Profile} />
+        <Route path='/logout' component={Logout} />
+        <Route path='/login' component={Login} />
+        <Route path='/' component={Login}/>
+      </Switch>
     </div>
   );
 }
