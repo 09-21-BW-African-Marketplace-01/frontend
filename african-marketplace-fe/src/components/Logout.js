@@ -1,11 +1,9 @@
-import React { useEffect }from 'react';
+import React, { useEffect } from 'react';
 import axiosWithAuth from './../utils/axiosWithAuth';
 
 const Logout = (props) => {
-    useEffect(()=> {
-        axiosWithAuth()
-        //.post
-    })
+    localStorage.removeItem('token');
+    props.history.push('/')
     return (<div></div>)
 }
 
