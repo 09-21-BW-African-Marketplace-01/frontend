@@ -10,19 +10,16 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
     root: {
-      minWidth: 400,
+      minWidth: 300,
     },
     title: {
       fontSize: '1rem',
     },
-    pos: {
-      marginBottom: 12,
-    },
     div: {
         display: 'flex',
         flexFlow: 'row wrap',
-        width: '100%'
-    }
+        width: '100%',
+    },
   });
 
 const ItemCard = (props) => {
@@ -51,16 +48,16 @@ const ItemCard = (props) => {
                 items.map((item, idx) => {
                     return(
                     <Card className={classes.root} key={idx}>
-                        <CardContent>
-                            <Typography variant="h6" component="h6">
+                        <CardContent className={classes.title}>
+                            <Typography variant="h6" component="h6" className={classes.title}>
                                {item.market_name}
                             </Typography>
-                            <Typography variant="body2" component="p">
+                            <Typography variant="body2" component="p" className={classes.body}>
                              {item.item_name}: ${item.item_price}
                             </Typography>
                         </CardContent>
-                        <CardActions>
-                            <Button size="small">learn more</Button>
+                        <CardActions className={classes.cardActions}>
+                            <Button size="small" className={classes.button}>Visit This market</Button>
                         </CardActions>
                     </Card>
                     )

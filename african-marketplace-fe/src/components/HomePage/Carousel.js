@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { images } from './CarouselData';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
-import Arrowbackios from '@material-ui/icons/ArrowBackIos';
 import { Button } from '@material-ui/core';
 
 
@@ -24,7 +23,7 @@ const useStyles = makeStyles({
     left: {
         flex: '1%',
         height: '100%',
-        backgroundColor: 'rgb(0,0,0,0.6)',
+        backgroundColor: 'rgb(0,0,0,0.5)',
         display: 'grid',
         placeItems: 'center',
         color: 'white',
@@ -37,7 +36,7 @@ const useStyles = makeStyles({
     right: {
         flex: '1%',
         height: '100%',
-        backgroundColor: 'rgb(0,0,0,0.6)',
+        backgroundColor: 'rgb(0,0,0,0.5)',
         display: 'grid',
         placeItems: 'center',
         color: 'white',
@@ -78,7 +77,7 @@ const Carousel = () => {
                 </div>
             </div>
             <div className={classes.buttonContainer}>
-                <Button variant="contained" className={classes.button}>Visit the Market</Button>
+                <Button variant="contained" className={classes.button}>Visit the marketplace</Button>
             </div>
         </div>
     )
