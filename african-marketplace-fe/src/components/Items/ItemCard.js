@@ -36,8 +36,6 @@ const ItemCard = (props) => {
         return <h3>Fetching data...</h3>
     }
 
-    console.log(items)
-
     return (
         
         <div className={classes.div}>
