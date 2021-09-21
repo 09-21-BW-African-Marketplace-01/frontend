@@ -56,7 +56,7 @@ const ItemCard = (props) => {
                                {item.market_name}
                             </Typography>
                             <Typography variant="body2" component="p">
-                             {item.item_name} {item.item_price}$
+                             {item.item_name}: ${item.item_price}
                             </Typography>
                         </CardContent>
                         <CardActions>
