@@ -18,6 +18,7 @@ const useStyles = makeStyles({
     div: {
         display: 'flex',
         flexFlow: 'row wrap',
+        justifyContent: 'space-between',
         width: '100%',
         marginTop: '20px'
     },
