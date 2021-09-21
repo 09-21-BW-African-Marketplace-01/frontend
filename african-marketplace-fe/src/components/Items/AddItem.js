@@ -68,7 +68,7 @@ const AddItem = () => {
                 </label>
                 <label>
                     <input 
-                        type='text'
+                        type='number'
                         name='item_price'
                         value={formValues.item_price}
                         onChange={handleChange}

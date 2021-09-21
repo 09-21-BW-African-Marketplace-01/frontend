@@ -7,7 +7,6 @@ function App() {
     <div className="App">
       <h1>African Marketplace</h1>
       < ItemList />
-
     </div>
   );
 }
