@@ -4,7 +4,8 @@ import Carousel from './Carousel';
 
 const useStyles = makeStyles({
     root: {
-      minWidth: 400,
+      textAlign: 'center',
+      marginBottom: '1px'
     }
 })
 
@@ -13,7 +14,7 @@ const HomePage = () => {
 
     return (
         <div>
-            <h1>Welcome to the African Marketplace!</h1>
+            <h1 className={classes.root}>Welcome to the African Marketplace!</h1>
             <Carousel/>
         </div>
     )

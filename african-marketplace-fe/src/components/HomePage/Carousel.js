@@ -4,6 +4,7 @@ import { images } from './CarouselData';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos'
 import Arrowbackios from '@material-ui/icons/ArrowBackIos';
+import { Button } from '@material-ui/core';
 
 
 const useStyles = makeStyles({
@@ -42,6 +43,22 @@ const useStyles = makeStyles({
         color: 'white',
         cursor: 'pointer',
     },
+    buttonContainer: {
+        position: 'relative',
+        width: '100%',
+        display: 'flex',
+        alignitems: 'center',
+        justifyContent: 'center',
+    },
+    button: {
+        backgroundColor: 'green',
+        color: 'white',
+        margin: '0',
+        position: 'absolute',
+        top: '50%',
+        msTransform: 'translateY(-50%)',
+        transform: 'translateY(-50%)',
+    },
 })
 
 const Carousel = () => {
@@ -52,15 +69,16 @@ const Carousel = () => {
     return (
         <div className={classes.carousel}>
             <div className={classes.carouselInner} style={{backgroundImage: `url(${images[currImg].img})`}}>
-
                 <div className={classes.left} onClick={() => { currImg > 0 && setCurrImg(currImg -1)}}>
-                    <Arrowbackios />
+                    <ArrowBackIosIcon />
                 </div>
                 <div className={classes.center}></div>
                 <div className={classes.right}>
                     <ArrowForwardIosIcon onClick={() => { currImg < images.length -1 && setCurrImg(currImg +1)}}/>
                 </div>
-
+            </div>
+            <div className={classes.buttonContainer}>
+                <Button variant="contained" className={classes.button}>Visit the Market</Button>
             </div>
         </div>
     )
