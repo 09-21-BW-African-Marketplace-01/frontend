@@ -12,13 +12,14 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemCard />
+    
       <Switch>
         <Route path='/profile/:id' component={Profile} />
         <Route path='/logout' component={Logout} />
         <Route path='/login' component={Login} />
         <Route path='/' component={HomePage}/>
       </Switch>
+      <ItemCard />
     </div>
   );
 }

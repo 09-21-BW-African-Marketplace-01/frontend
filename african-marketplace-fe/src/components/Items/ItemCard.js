@@ -19,6 +19,7 @@ const useStyles = makeStyles({
         display: 'flex',
         flexFlow: 'row wrap',
         width: '100%',
+        marginTop: '20px'
     },
   });
 
