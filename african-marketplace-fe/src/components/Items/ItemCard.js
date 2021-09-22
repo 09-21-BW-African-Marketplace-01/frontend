@@ -65,7 +65,7 @@ const ItemCard = (props) => {
                         </CardContent>
                         <CardActions className={classes.cardActions}>
                             <Button size="small" className={classes.button}>
-                                <Link to={`${match.path}/${item.user_id}`} style={{textDecoration: 'none'}}> Visit This market </Link>
+                                <Link to={`${match.path}/${item.market_id}`} style={{textDecoration: 'none'}}> Visit This market </Link>
                             </Button>
                         </CardActions>
                     </Card>
@@ -79,9 +79,9 @@ const ItemCard = (props) => {
 
 const mapStateToProps = state => {
     return({
-        items: state.items,
-        isFetching: state.isFetching,
-        error: state.error
+        items: state.reducerItems.items,
+        isFetching: state.reducerItems.isFetching,
+        error: state.reducerItems.error
     })
 }
 

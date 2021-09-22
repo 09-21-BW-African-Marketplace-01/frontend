@@ -7,7 +7,7 @@ import Profile from './components/Profile';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import HomePage from './components/HomePage/HomePage'
-
+import ViewMarket from './components/ViewMarket';
 
 function App() {
   
@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Switch>
-        {/* <Route path='/market/:id' component={ItemCard} />   */}
+        <Route path='/market/:id' component={ViewMarket} />  
         <Route path='/market' component={ItemCard} />
         <Route path='/profile/:id' component={Profile} />
         <Route path='/logout' component={Logout} />
