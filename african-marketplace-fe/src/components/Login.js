@@ -23,16 +23,15 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(credentials)
-        axios.post('http://localhost:3300/api/users/login', credentials)
+        axios.post('https://back-end-african-market.herokuapp.com/api/users/login', credentials)
             .then(resp => {
-                // console.log(resp.data.payload)
-                localStorage.setItem('token', resp.data.payload)
+                localStorage.setItem('token', resp.data.token)
                 setCredentials({
                     username:'',
                     password:''
                 });
                 setError('');
+                history.push('/')
             })
             .catch(err => {
                 setError(err);
@@ -42,7 +41,7 @@ const Login = () => {
     return (
         <div>
             <form>
-
+                <label>Username: </label>
                 <input 
                 type='text'
                 name='username'
@@ -51,6 +50,7 @@ const Login = () => {
                 onChange={handleChange}
                 />
 
+                <label>Password: </label>
                 <input 
                 type='password'
                 name='password'
