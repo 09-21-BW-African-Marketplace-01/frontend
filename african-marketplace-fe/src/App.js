@@ -6,6 +6,7 @@ import Profile from './components/Profile';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import HomePage from './components/HomePage/HomePage'
+import './index.css'
 
 function App() {
   
