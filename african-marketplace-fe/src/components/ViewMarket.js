@@ -10,6 +10,7 @@ const ViewMarket = (props) => {
 
     useEffect(() => {
         getMarket(id)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     if(isFetching){
