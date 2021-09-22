@@ -81,7 +81,7 @@ const Carousel = () => {
             </div>
             <div className={classes.buttonContainer}>
                 <Button variant="contained" className={classes.button}>
-                    <Link to='markets' style={{textDecoration: 'none', color: 'white'}}>Visit the marketplace</Link>
+                    <Link to='/market' style={{textDecoration: 'none', color: 'white'}}>Visit the marketplace</Link>
                 </Button>
             </div>
         </div>
