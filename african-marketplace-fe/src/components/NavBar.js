@@ -11,7 +11,7 @@ const NavBar = () => {
       <AppBar position="static">
         <Toolbar>
           <IconButton
-            size="large"
+            size="medium"
             edge="start"
             color="inherit"
             aria-label="menu"

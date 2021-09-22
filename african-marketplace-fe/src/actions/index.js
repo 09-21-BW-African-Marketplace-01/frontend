@@ -9,7 +9,7 @@ export const ADD_ITEM = 'ADD_ITEM'
 export const fetchItems = () => {
     return(dispatch) => {
         dispatch(fetchStart())
-        axios.get('MOCK_DATA.json')
+        axios.get('https://back-end-african-market.herokuapp.com/api/items/')
             .then(res => {
                 dispatch(fetchSuccess(res.data))
             })
