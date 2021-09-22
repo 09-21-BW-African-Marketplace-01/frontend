@@ -5,7 +5,7 @@ import Carousel from './Carousel';
 const useStyles = makeStyles({
     root: {
       textAlign: 'center',
-      marginBottom: '5px'
+      marginBottom: '15px'
     }
 })
 
