@@ -4,7 +4,6 @@ const Profile = (props) => {
     console.log('profile props', props)
     return(
         <div className='profile-card'>
-            
         </div>
     )
 }

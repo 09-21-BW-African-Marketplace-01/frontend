@@ -23,15 +23,10 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(credentials)
-        axios.post('http://localhost:3300/api/users/login', credentials)
+        axios.post('https://back-end-african-market.herokuapp.com/api/users/login', credentials)
             .then(resp => {
-                // console.log(resp.data.payload)
-                localStorage.setItem('token', resp.data.payload)
-                setCredentials({
-                    username:'',
-                    password:''
-                });
+                console.log(resp.data)
+                // localStorage.setItem('token', resp.data.payload)
                 setError('');
             })
             .catch(err => {

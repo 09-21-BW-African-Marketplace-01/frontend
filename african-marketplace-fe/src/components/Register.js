@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
+import axios from 'axios';
 
 const Register = () => {
     
@@ -12,7 +13,21 @@ const Register = () => {
     const [newUser, setNewUser] = useState(initialState);
     
     const handleChange = (e) => {
-        
+        setNewUser({
+            ...newUser,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        axios.post('https://back-end-african-market.herokuapp.com/api/users/register', newUser)
+            .then(resp => {
+                
+            })
+            .catch(err => {
+
+            })
     }
 
     return (
