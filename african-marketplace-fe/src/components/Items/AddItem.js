@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axiosWithAuth from '../../utils/axiosWithAuth'
 
 const initialFormValues = {
-    market_name: '',
+    // market_name: '',
     item_description: '',
     item_name: '',
     item_price: ''
