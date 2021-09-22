@@ -3,7 +3,16 @@ import { FETCH_START_MARKET, FETCH_ERROR_MARKET, FETCH_SUCCESS_MARKET } from "..
 
 const initialState = 
 {
-    market:[],
+    market:{
+        items:[
+            {            
+            item_description: "",
+            item_id: '',
+            item_name: "",
+            item_price: "",
+            }
+        ],
+    },
     isFetching: false,
     error: '',
 }
@@ -20,7 +29,7 @@ export function reducerMarket (state = initialState, action) {
         case(FETCH_SUCCESS_MARKET):
             return ({
                 ...state,
-                market: action.payload, 
+                market: action.payload,
                 isFetching: false,
                 error: ''
             })
