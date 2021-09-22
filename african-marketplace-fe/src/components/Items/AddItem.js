@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import axiosWithAuth from '../../utils/axiosWithAuth'
 
 const initialFormValues = {
-    // market_name: '',
     item_description: '',
     item_name: '',
     item_price: ''
@@ -27,7 +26,7 @@ const AddItem = () => {
             item_price: formValues.item_price
         }
         axiosWithAuth()
-            .post('', newItem)
+            .post('https://back-end-african-market.herokuapp.com/api/items/', newItem)
             .then(res => {
                 console.log(res)
             })
@@ -39,15 +38,6 @@ const AddItem = () => {
 
     return (
             <form onSubmit={handleSubmit}>
-                {/* <label>
-                    <input 
-                        type='text'
-                        name='market_name'
-                        value={formValues.market_name}
-                        onChange={handleChange}
-                        placeholder='market name'
-                    />
-                </label> */}
                 <label>
                     <input 
                         type='text'

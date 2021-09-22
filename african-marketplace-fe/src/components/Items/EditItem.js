@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router'
 
 const EditItem = () => {
 
@@ -9,6 +10,8 @@ const EditItem = () => {
         item_name: '',
         item_price: ''
     })
+
+    // const { id } = useParams()
 
     // useEffect(() => {
 	// 	axios.get(``)
