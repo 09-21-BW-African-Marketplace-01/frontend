@@ -15,6 +15,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Switch>
+        {/* <Route path='/market/:id' component={ItemCard} />   */}
         <Route path='/market' component={ItemCard} />
         <Route path='/profile/:id' component={Profile} />
         <Route path='/logout' component={Logout} />

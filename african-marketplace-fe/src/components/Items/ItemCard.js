@@ -65,7 +65,7 @@ const ItemCard = (props) => {
                         </CardContent>
                         <CardActions className={classes.cardActions}>
                             <Button size="small" className={classes.button}>
-                                <Link to={`${match.path}/${item.user_id}`}> Visit This market </Link>
+                                <Link to={`${match.path}/${item.user_id}`} style={{textDecoration: 'none'}}> Visit This market </Link>
                             </Button>
                         </CardActions>
                     </Card>
