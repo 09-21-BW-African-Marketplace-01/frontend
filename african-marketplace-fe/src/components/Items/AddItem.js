@@ -21,7 +21,7 @@ const AddItem = () => {
     const handleSubmit = e => {
         e.preventDefault()
         let newItem = {
-            market_name: formValues.market_name,
+            // market_name: formValues.market_name,
             item_description: formValues.item_description,
             item_name: formValues.item_name,
             item_price: formValues.item_price
@@ -39,7 +39,7 @@ const AddItem = () => {
 
     return (
             <form onSubmit={handleSubmit}>
-                <label>
+                {/* <label>
                     <input 
                         type='text'
                         name='market_name'
@@ -47,7 +47,7 @@ const AddItem = () => {
                         onChange={handleChange}
                         placeholder='market name'
                     />
-                </label>
+                </label> */}
                 <label>
                     <input 
                         type='text'
