@@ -7,6 +7,8 @@ const useStyles = makeStyles({
     root: {
       minWidth: 300,
       margin: 2,
+      display: 'flex',
+      flexFlow: 'row wrap'
     },
     title: {
       fontSize: '1rem',
