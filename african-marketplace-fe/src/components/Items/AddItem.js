@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import { useParams } from 'react-router'
 import axiosWithAuth from '../../utils/axiosWithAuth'
 
+
 const initialFormValues = {
+    market_id: '',
     item_description: '',
     item_name: '',
     item_price: ''
@@ -9,6 +12,9 @@ const initialFormValues = {
 
 const AddItem = () => {
     const [formValues, setFormValues] = useState(initialFormValues)
+    const { id } = useParams()
+
+    console.log(id)
 
     const handleChange = e => {
         setFormValues({
@@ -17,10 +23,11 @@ const AddItem = () => {
         })
     }
 
+
     const handleSubmit = e => {
         e.preventDefault()
         let newItem = {
-            // market_name: formValues.market_name,
+            market_id: id,
             item_description: formValues.item_description,
             item_name: formValues.item_name,
             item_price: formValues.item_price
@@ -33,7 +40,6 @@ const AddItem = () => {
             .catch(err => {
                 console.log(err)
             })
-
     }
 
     return (
@@ -71,3 +77,4 @@ const AddItem = () => {
 }
 
 export default AddItem
+

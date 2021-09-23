@@ -11,17 +11,17 @@ const EditItem = () => {
         item_price: ''
     })
 
-    // const { id } = useParams()
+    const { id } = useParams()
 
-    // useEffect(() => {
-	// 	axios.get(``)
-	// 		.then(res => {
-	// 			setItem(res.data)
-	// 		})
-	// 		.catch(err => {
-	// 			console.log(err)
-	// 		})
-	// }, [])
+    useEffect(() => {
+		axios.get(`https://back-end-african-market.herokuapp.com/api/markets/${id}`)
+			.then(res => {
+				setItem(res.data)
+			})
+			.catch(err => {
+				console.log(err)
+			})
+	}, [])
 
     const handleChange = e => {
         setItem({
