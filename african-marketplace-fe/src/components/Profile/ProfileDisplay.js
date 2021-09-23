@@ -22,6 +22,7 @@ const ProfileDisplay = (props) => {
     const userMarketItems= userMarket.items;
     const classes = useStyles();
 
+
         const DisplayError = () => {
             return (
                 <div className='display-error' >
