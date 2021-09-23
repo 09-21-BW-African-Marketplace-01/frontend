@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { 
     Button,
-    Avatar,
     CssBaseline,
     TextField,
-    Link,
     Grid,
     Box,
     Typography,
@@ -17,11 +15,12 @@ import { useHistory } from 'react-router-dom';
 
 const theme = createTheme();
 
-const CreateMarket = () => {
+const CreateMarket = (props) => {
     const { push } = useHistory();
     const [market, setMarket] = useState({
         market_name:'',
-        user_id:localStorage.getItem('user_id')
+        user_id:localStorage.getItem('user_id'),
+        market_id:null
     });
 
     const handleChange = (e) => {
@@ -37,6 +36,10 @@ const CreateMarket = () => {
             .then(resp => {
                 //need a way to set market_id into state before the rest and make it grabbable for profile
                 console.log(resp.data)
+                setMarket({
+                    ...market,
+                    market_id: resp.data.market_id
+                })
             })
             .catch(err => {
                 console.error(err)
@@ -82,6 +85,14 @@ const CreateMarket = () => {
               sx={{ mt: 3, mb: 2 }}
             >
               Create
+            </Button>
+            <Button
+              onClick={()=>props.setToggle(!props.toggle)}
+              fullWidth
+              variant="contained"
+              sx={{ mt: 2, mb: 2 }}
+            >
+              Cancel
             </Button>
           </Box>
         </Box>

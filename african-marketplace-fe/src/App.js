@@ -23,7 +23,6 @@ function App() {
       <NavBar isLoggedIn={isLoggedIn}/>
       <Switch>
         <Route path='/edit' component={EditItem} />
-        <PrivateRoute path='/profile/createmarket' component={CreateMarket}/>
         <Route path='/market/:id' component={ViewMarket} />  
         <Route path='/market' component={ItemCard} />
         <PrivateRoute path='/profile/' component={Profile}/>

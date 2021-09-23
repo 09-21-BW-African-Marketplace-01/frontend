@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
@@ -25,11 +25,13 @@ const ProfileDisplay = (props) => {
     const classes = useStyles();
     const { push } = useHistory();
 
+    const [toggle, setToggle] = useState(false)
+
         const DisplayError = () => {
             return (
                 <div className='display-error' >
-                    <h1>{error}</h1>
-                    <Button onClick={()=> push('/profile/createmarket')}
+                    {toggle ? '' : <h1>{error}</h1>}
+                    {toggle ? '' :<Button onClick={()=>setToggle(!toggle)}
                      style={{
                         borderRadius: 35,
                         backgroundColor: "#21b6ae",
@@ -38,7 +40,8 @@ const ProfileDisplay = (props) => {
                     }}
                         variant="contained">
                         Create Market
-                    </Button>
+                    </Button>}
+                    { toggle ? <CreateMarket setToggle={setToggle} toggle={toggle}/> : ''}
                 </div>           
             )
     }
