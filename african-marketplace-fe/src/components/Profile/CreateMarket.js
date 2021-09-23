@@ -1,12 +1,27 @@
 import React, { useState } from 'react';
-import { Button } from '@material-ui/core';
+import { 
+    Button,
+    Avatar,
+    CssBaseline,
+    TextField,
+    Link,
+    Grid,
+    Box,
+    Typography,
+    Container
+ } from '@mui/material';
+ import  { createTheme, ThemeProvider } from '@material-ui/core/styles';
+
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+
+const theme = createTheme();
 
 const CreateMarket = () => {
     const { push } = useHistory();
     const [market, setMarket] = useState({
         market_name:'',
+        user_id:localStorage.getItem('user_id')
     });
 
     const handleChange = (e) => {
@@ -18,8 +33,9 @@ const CreateMarket = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(' https://back-end-african-market.herokuapp.com/api/markets/', market)
+        axios.post('https://back-end-african-market.herokuapp.com/api/markets/', market)
             .then(resp => {
+                //need a way to set market_id into state before the rest and make it grabbable for profile
                 console.log(resp.data)
             })
             .catch(err => {
@@ -29,25 +45,52 @@ const CreateMarket = () => {
 
 
     return (
-        <div>
-            <form>
-            <label>Market Name: </label>
-            <input 
-                value={market.name}
-                onChange={handleChange}
-                autoComplete="storename"
-                name="market_name"
-                required
-                fullWidth
-                id="market_name"
-                label="MarketName"
-                autoFocus
-            />
-            <Button onClick={handleSubmit}>Create Market</Button>
-            <Button onClick={()=>push('/profile')}>Cancel</Button>
-            </form>
-        </div>
+        <ThemeProvider theme={theme}>
+            <Container component="main" maxWidth="xs">
+                <CssBaseline />
+                <Box
+                    sx={{
+                        marginTop: 8,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                    }}
+                >
+          <Typography component="h1" variant="h5">
+            Create Your Market
+          </Typography>
+          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <TextField
+                  value={market.market_name}
+                  onChange={handleChange}
+                  autoComplete="marketname"
+                  name="market_name"
+                  required
+                  fullWidth
+                  id="marketname"
+                  label="Market Name"
+                  autoFocus
+                />
+              </Grid>
+            </Grid>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Create
+            </Button>
+          </Box>
+        </Box>
+      </Container>
+    </ThemeProvider>
     )
 }
 
 export default CreateMarket;
+
+
+

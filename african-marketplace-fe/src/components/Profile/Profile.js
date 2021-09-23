@@ -5,14 +5,14 @@ import { connect } from 'react-redux';
 import ProfileDisplay from './ProfileDisplay';
 import { fetchUserStart, fetchUserSuccess, fetchUserFail } from './../../actions/userMarketAction'
 
-
 const Profile = (props) => {
     const userMarket = props.userMarket.userMarket;
     const { fetchUserStart, fetchUserSuccess, fetchUserFail} = props;
     // const error = props.userMarket.error;
     // const userMarketItems= userMarket.items;
- 
-    useEffect(() =>{
+
+    console.log(props.userMarket)
+     useEffect(() =>{
         axios.get(`https://back-end-african-market.herokuapp.com/api/markets/${userMarket.user_id}`)
         .then(resp => {
             fetchUserStart();
