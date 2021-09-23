@@ -1,16 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router'
 import axiosWithAuth from '../../utils/axiosWithAuth'
+import { connect } from 'react-redux'
+import { fetchItems } from '../../actions'
 
 const initialFormValues = {
-    // market_name: '',
+    market_id: '',
     item_description: '',
     item_name: '',
     item_price: ''
 }
 
-const AddItem = () => {
+const AddItem = (props) => {
     const [formValues, setFormValues] = useState(initialFormValues)
+    const { fetchItems } = props
+    const { id } = useParams()
 
+    useEffect(() => {
+        fetchItems()
+    },[])
+    
+    
     const handleChange = e => {
         setFormValues({
             ...formValues,
@@ -18,36 +28,29 @@ const AddItem = () => {
         })
     }
 
+
+
+
     const handleSubmit = e => {
         e.preventDefault()
         let newItem = {
-            // market_name: formValues.market_name,
+            market_id: id,
             item_description: formValues.item_description,
             item_name: formValues.item_name,
             item_price: formValues.item_price
         }
         axiosWithAuth()
-            .post('', newItem)
+            .post('https://back-end-african-market.herokuapp.com/api/items/', newItem)
             .then(res => {
                 console.log(res)
             })
             .catch(err => {
                 console.log(err)
             })
-
     }
 
     return (
             <form onSubmit={handleSubmit}>
-                {/* <label>
-                    <input 
-                        type='text'
-                        name='market_name'
-                        value={formValues.market_name}
-                        onChange={handleChange}
-                        placeholder='market name'
-                    />
-                </label> */}
                 <label>
                     <input 
                         type='text'
@@ -80,4 +83,5 @@ const AddItem = () => {
     )
 }
 
-export default AddItem
+export default connect(null, {fetchItems})(AddItem)
+

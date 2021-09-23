@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router'
 
 const EditItem = () => {
 
@@ -10,15 +11,17 @@ const EditItem = () => {
         item_price: ''
     })
 
-    // useEffect(() => {
-	// 	axios.get(``)
-	// 		.then(res => {
-	// 			setItem(res.data)
-	// 		})
-	// 		.catch(err => {
-	// 			console.log(err)
-	// 		})
-	// }, [])
+    const { id } = useParams()
+
+    useEffect(() => {
+		axios.get(`https://back-end-african-market.herokuapp.com/api/markets/${id}`)
+			.then(res => {
+				setItem(res.data)
+			})
+			.catch(err => {
+				console.log(err)
+			})
+	}, [])
 
     const handleChange = e => {
         setItem({

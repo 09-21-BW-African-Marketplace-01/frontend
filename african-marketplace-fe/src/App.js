@@ -12,6 +12,7 @@ import Register from './components/Register';
 import HomePage from './components/HomePage/HomePage';
 import ViewMarket from './components/ViewMarket';
 
+
 function App() {
   const isLoggedIn = localStorage.getItem('token') ? true : false;
 
