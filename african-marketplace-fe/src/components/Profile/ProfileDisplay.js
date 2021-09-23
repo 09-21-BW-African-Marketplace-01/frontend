@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import ProfileItem from './ProfileItem';
 import AddItem from '../Items/AddItem';
+import CreateMarket from './CreateMarket';
 
 const useStyles = makeStyles({
     div: {
@@ -21,12 +23,25 @@ const ProfileDisplay = (props) => {
     const error = props.userMarket.error;
     const userMarketItems= userMarket.items;
     const classes = useStyles();
+    const { push } = useHistory();
+
+    const [toggle, setToggle] = useState(false)
 
         const DisplayError = () => {
             return (
                 <div className='display-error' >
-                    <h1>{error}</h1>
-                    <button>Create Store</button>
+                    {toggle ? '' : <h1>{error}</h1>}
+                    {toggle ? '' :<Button onClick={()=>setToggle(!toggle)}
+                     style={{
+                        borderRadius: 35,
+                        backgroundColor: "#21b6ae",
+                        padding: "18px 36px",
+                        fontSize: "18px"
+                    }}
+                        variant="contained">
+                        Create Market
+                    </Button>}
+                    { toggle ? <CreateMarket setToggle={setToggle} toggle={toggle}/> : ''}
                 </div>           
             )
     }
