@@ -22,7 +22,6 @@ const Profile = (props) => {
             fetchUserFail('No Markets to Display');
         })
     },[])
-
     return(
         <ProfileDisplay />
     )
