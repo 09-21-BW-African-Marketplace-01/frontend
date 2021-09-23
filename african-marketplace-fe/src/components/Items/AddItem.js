@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axiosWithAuth from '../../utils/axiosWithAuth'
+import TextField from '@mui/material/TextField';
 
 const initialFormValues = {
     market_id: '',
@@ -42,7 +43,7 @@ const AddItem = (props) => {
         <h3>Add a new Item: </h3>
             <form onSubmit={handleSubmit}>
                 <label>
-                    <input 
+                    <TextField 
                         type='text'
                         name='item_description'
                         value={formValues.item_description}
@@ -51,7 +52,7 @@ const AddItem = (props) => {
                     />
                 </label>
                 <label>
-                    <input 
+                    <TextField 
                         type='text'
                         name='item_name'
                         value={formValues.item_name}
@@ -60,7 +61,7 @@ const AddItem = (props) => {
                     />
                 </label>
                 <label>
-                    <input 
+                    <TextField 
                         type='number'
                         name='item_price'
                         value={formValues.item_price}

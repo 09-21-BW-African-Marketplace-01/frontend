@@ -23,6 +23,7 @@ const EditItem = (props) => {
             .catch(err => {
                 console.log(err)
             })
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
     if(isFetching){
@@ -31,7 +32,7 @@ const EditItem = (props) => {
     
     const handleChange = e => {
         setItem({
-            ...setItem,
+            ...item,
             [e.target.name]:e.target.value
         })
     }
@@ -58,7 +59,7 @@ const EditItem = (props) => {
                     onChange={handleChange} 
                     name="item_description" 
                     type="text"
-                    label="Item Description"
+                    placeholder="Item Description"
                     style={{margin: '5px'}}
                 />   
 
@@ -67,7 +68,7 @@ const EditItem = (props) => {
                     onChange={handleChange} 
                     name="item_name" 
                     type="text"
-                    label='Item Name'
+                    placeholder='Item Name'
                     style={{margin: '5px'}}
                 />      
 
@@ -76,7 +77,7 @@ const EditItem = (props) => {
                     onChange={handleChange} 
                     name="item_price" 
                     type="number"
-                    label='Price'
+                    placeholder='Price'
                     style={{margin: '5px'}}
                 />  
                 
