@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Button } from '@mui/material';
 
-import { fetchUserStart, fetchUserSuccess, fetchUserFail } from '../actions/userMarketAction';
+import ProfileItem from './ProfileItem';
+import { fetchUserStart, fetchUserSuccess, fetchUserFail } from './../../actions/userMarketAction'
 
 
 const Profile = (props) => {
-    const { push } = useHistory();
     const userMarket = props.userMarket.userMarket;
     const userMarketItems= userMarket.items;
  
@@ -28,13 +26,7 @@ const Profile = (props) => {
             <h1>It's good to see you back {userMarket.name}</h1>
             <h2>{userMarket.market_name}</h2>
             {userMarketItems.map(item => {
-                return(<div>
-                    <h3>{item.item_name}</h3>
-                    <h4>{item.item_description}</h4>
-                    <h4>${item.item_price}</h4>
-                    <Button>Edit</Button>
-                </div>)
-                
+                return <ProfileItem key={item.item_id} item={item}/>
             })}
         </div>
     )
