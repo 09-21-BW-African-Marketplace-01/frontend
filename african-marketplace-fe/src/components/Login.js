@@ -105,6 +105,7 @@ const Login = () => {
         >
         Submit
         </Button>
+        {error ? <p>Your username or password is incorrect</p> : ''}
         </Grid>
         </Grid>
         </form>
@@ -119,7 +120,33 @@ const Login = () => {
         </Grid>
         </Grid>
         </div>
+
+
+        // <div>
+        //     <form>
+        //         <label>Username: </label>
+        //         <input 
+        //         type='text'
+        //         name='username'
+        //         value={credentials.username}
+        //         placeholder='username'
+        //         onChange={handleChange}
+        //         />
+
+        //         <label>Password: </label>
+        //         <input 
+        //         type='password'
+        //         name='password'
+        //         value={credentials.password}
+        //         placeholder='password'
+        //         onChange={handleChange}
+        //         />
+        //         <Button onClick={handleSubmit}>Log in</Button>
+        //         {error ? <p>Error!</p> : ''}
+        //     </form>
+            
+        // </div>
     )
 }
 
-export default Login;
+export default Login
