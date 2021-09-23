@@ -4,6 +4,7 @@ import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import ProfileItem from './ProfileItem';
+import AddItem from '../Items/AddItem';
 
 const useStyles = makeStyles({
     div: {
@@ -21,7 +22,7 @@ const ProfileDisplay = (props) => {
     const userMarketItems= userMarket.items;
     const classes = useStyles();
 
-    const DisplayError = () => {
+        const DisplayError = () => {
             return (
                 <div className='display-error' >
                     <h1>{error}</h1>
@@ -32,11 +33,14 @@ const ProfileDisplay = (props) => {
 
     const DisplaySuccess = () => {
         const classesSuccess = useStyles();
+        const id = localStorage.getItem('user_id')
         return(
             <div className='display-success'>
                 <h1>It's good to see you back {userMarket.name}</h1>
                 <h2>{userMarket.market_name}</h2>
-                <Button>Add Item</Button>
+                {
+                    <AddItem id={id}/>
+                }
                 <div className={classesSuccess.div} >
                     {userMarketItems.map(item => {
                         return <ProfileItem key={item.item_id} item={item}/>

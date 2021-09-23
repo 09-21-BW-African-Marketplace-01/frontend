@@ -38,6 +38,8 @@ const AddItem = (props) => {
     }
 
     return (
+        <>
+        <h3>Add a new Item: </h3>
             <form onSubmit={handleSubmit}>
                 <label>
                     <input 
@@ -68,6 +70,7 @@ const AddItem = (props) => {
                 </label>
                 <button>Submit</button>
             </form>
+        </>
     )
 }
 
