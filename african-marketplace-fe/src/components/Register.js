@@ -13,6 +13,7 @@ import {
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import  { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const theme = createTheme();
 
@@ -25,6 +26,8 @@ const Register = () => {
     };
 
     const [newUser, setNewUser] = useState(initialState);
+
+    const { push } = useHistory();
     
     const handleChange = (e) => {
         setNewUser({
@@ -38,6 +41,8 @@ const Register = () => {
         axios.post('https://back-end-african-market.herokuapp.com/api/users/register', newUser)
             .then(resp => {
                 console.log('response!', resp.data)
+                push('/profile')
+
             })
             .catch()
     }

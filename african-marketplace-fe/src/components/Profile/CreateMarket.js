@@ -19,8 +19,7 @@ const CreateMarket = (props) => {
     const { push } = useHistory();
     const [market, setMarket] = useState({
         market_name:'',
-        user_id:localStorage.getItem('user_id'),
-        market_id:null
+        user_id:localStorage.getItem('user_id')
     });
 
     const handleChange = (e) => {
@@ -34,12 +33,7 @@ const CreateMarket = (props) => {
         e.preventDefault();
         axios.post('https://back-end-african-market.herokuapp.com/api/markets/', market)
             .then(resp => {
-                //need a way to set market_id into state before the rest and make it grabbable for profile
-                console.log(resp.data)
-                setMarket({
-                    ...market,
-                    market_id: resp.data.market_id
-                })
+                push('/profile')
             })
             .catch(err => {
                 console.error(err)
