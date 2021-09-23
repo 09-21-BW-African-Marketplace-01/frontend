@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import { reducerMarket } from "./reducerMarket";
-import { reducerUser } from './reducerUser';
+import { reducerUserMarket } from './reducerUserMarket';
 import reducerItems from "./reducerItems";
 
 export default combineReducers({
     reducerMarket,
     reducerItems,
-    reducerUser
+    userMarket: reducerUserMarket
 })
