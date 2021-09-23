@@ -30,11 +30,10 @@ const NavBar = () => {
           </div>
 
           <div className={classes.buttons}>
+            <Button href='/' color="inherit">Home</Button>
             <Button href='/profile' color="inherit">Profile</Button>
             <Button href='/login' color="inherit">Login</Button>
             <Button href='/logout' color="inherit">Logout</Button>
-
-            
           </div>
         </Toolbar>
       </AppBar>
