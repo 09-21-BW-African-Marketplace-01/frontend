@@ -11,6 +11,16 @@ const useStyles = makeStyles({
     title: {
       fontSize: '1rem',
     },
+    button: {
+        display: 'inline-block',
+        color: '#444',
+        border: '1px solid #CCC',
+        boxShadow: '0 0 5px -1px rgba(0,0,0,0.2)',
+        cursor: 'pointer',
+        verticalAlign: 'middle',
+        padding: '5px',
+        textAlign: 'center'
+    },
   });
 
 const ProfileItem = (props) => {
@@ -32,9 +42,9 @@ const ProfileItem = (props) => {
                 </Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
-                <Button size="small" className={classes.button} value='Edit' onClick={onClick}>
-                    {showResults ? <EditItem itemId={item.item_id}/> : <div>edit</div>}
-                </Button>
+                <div size="small" className={classes.button} value='Edit' onClick={onClick}>
+                    {showResults ? <EditItem itemId={item.item_id}/> : <div>Edit</div>}
+                </div>
             </CardActions>
         </Card>
     )

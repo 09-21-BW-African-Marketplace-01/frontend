@@ -36,7 +36,6 @@ const EditItem = (props) => {
         })
     }
 
-    console.log(item)
 
     const handleSubmit = (e) => {
 		e.preventDefault();
@@ -49,72 +48,36 @@ const EditItem = (props) => {
 				console.log(err)
 			})
 	}
-
-
-    
+ 
 
     return (
         <>
-        
-        {/* {
-            market.items.map((details, idx) => {
-                return(
-                <form onSubmit={handleSubmit} style={{marginTop: '20px'}}>
-                    <div key={idx}>
-                            <TextField 
-                                value={details.item_description} 
-                                onChange={handleChange} 
-                                name="item_description" 
-                                label="Item Description"
-                                type="text"
-                                style={{margin: '5px'}}
-                            />   
-                            <TextField 
-                                value={details.item_name} 
-                                onChange={handleChange} 
-                                name="item_name" 
-                                type="text"
-                                label='Item Name'
-                                style={{margin: '5px'}}
-                            />      
-                            <TextField 
-                                value={details.item_price} 
-                                onChange={handleChange} 
-                                name="item_price" 
-                                type="number"
-                                label='Price'
-                                style={{margin: '5px'}}
-                            />  
-                        </div>
-                    <button>Submit</button>
-                    </form> 
-                )
-            })
-        } */}
-
     <form onSubmit={handleSubmit}>
-            <label>Item Description</label>
-                <input 
+                <TextField 
                     value={item.item_description} 
                     onChange={handleChange} 
                     name="item_description" 
                     type="text"
+                    label="Item Description"
+                    style={{margin: '5px'}}
                 />   
 
-            <label>Item Name</label>
-                <input 
+                <TextField 
                     value={item.item_name} 
                     onChange={handleChange} 
                     name="item_name" 
                     type="text"
+                    label='Item Name'
+                    style={{margin: '5px'}}
                 />      
 
-            <label>Item Price</label>
-                <input 
+                <TextField 
                     value={item.item_price} 
                     onChange={handleChange} 
                     name="item_price" 
                     type="number"
+                    label='Price'
+                    style={{margin: '5px'}}
                 />  
                 
         <button>Submit</button>
