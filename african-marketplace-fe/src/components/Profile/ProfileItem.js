@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import EditItem from '../Items/EditItem';
 
 const useStyles = makeStyles({
     root: {
@@ -13,7 +14,12 @@ const useStyles = makeStyles({
   });
 
 const ProfileItem = (props) => {
+    const [showResults, setShowResults] = useState(false)
+    const onClick = () => setShowResults(true)
+
+
     const { item } = props;
+    console.log(item)
     const classes = useStyles();
     return (
         <Card className={classes.root} >
@@ -26,8 +32,8 @@ const ProfileItem = (props) => {
                 </Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
-                <Button size="small" className={classes.button}>
-                    Edit
+                <Button size="small" className={classes.button} value='Edit' onClick={onClick}>
+                    {showResults ? <EditItem itemId={item.item_id}/> : <div>edit</div>}
                 </Button>
             </CardActions>
         </Card>

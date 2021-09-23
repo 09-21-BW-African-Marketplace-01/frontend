@@ -43,7 +43,7 @@ const ProfileDisplay = (props) => {
                 }
                 <div className={classesSuccess.div} >
                     {userMarketItems.map(item => {
-                        return <ProfileItem key={item.item_id} item={item}/>
+                        return <ProfileItem key={item.item_id} itemId={item.item_id} item={item}/>
                     })}
                 </div>
             </div>

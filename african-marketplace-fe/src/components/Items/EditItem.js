@@ -2,11 +2,11 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import TextField from '@mui/material/TextField';
 import { connect } from 'react-redux';
-import { getMarket } from '../../actions/marketAction';
+
 
 
 const EditItem = (props) => {
-    const { isFetching, getMarket } = props
+    const { isFetching, itemId } = props
 
     const [item, setItem] =useState({
         item_description: '',
@@ -14,10 +14,15 @@ const EditItem = (props) => {
         item_price: ''
     })
 
-    const id = localStorage.getItem('user_id')
-
+    
     useEffect(() => {
-        getMarket(id)
+        axios.get(`https://back-end-african-market.herokuapp.com/api/items/${itemId}`)
+            .then(res => {
+                setItem(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
 	}, [])
 
     if(isFetching){
@@ -127,4 +132,4 @@ const mapStateToProps = state => {
     })
 }
 
-export default connect(mapStateToProps, { getMarket })(EditItem)
+export default connect(mapStateToProps)(EditItem)
