@@ -11,6 +11,7 @@ import Logout from './components/Logout';
 import Register from './components/Register';
 import HomePage from './components/HomePage/HomePage';
 import ViewMarket from './components/ViewMarket';
+import EditItem from './components/Items/EditItem';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     <div className="App">
       <NavBar isLoggedIn={isLoggedIn}/>
       <Switch>
+        <Route path='/edit' component={EditItem} />
         <Route path='/market/:id' component={ViewMarket} />  
         <Route path='/market' component={ItemCard} />
         <PrivateRoute path='/profile/' component={Profile}/>

@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import React, { useState } from 'react'
 import axiosWithAuth from '../../utils/axiosWithAuth'
-import { connect } from 'react-redux'
-import { fetchItems } from '../../actions'
+import TextField from '@mui/material/TextField';
 
 const initialFormValues = {
     market_id: '',
@@ -13,23 +11,14 @@ const initialFormValues = {
 
 const AddItem = (props) => {
     const [formValues, setFormValues] = useState(initialFormValues)
-    const { fetchItems } = props
-    const { id } = useParams()
-
-    useEffect(() => {
-        fetchItems()
-    },[])
-    
-    
+    const { id } = props
+      
     const handleChange = e => {
         setFormValues({
             ...formValues,
             [e.target.name]:e.target.value
         })
     }
-
-
-
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -50,9 +39,11 @@ const AddItem = (props) => {
     }
 
     return (
+        <>
+        <h3>Add a new Item: </h3>
             <form onSubmit={handleSubmit}>
                 <label>
-                    <input 
+                    <TextField 
                         type='text'
                         name='item_description'
                         value={formValues.item_description}
@@ -61,7 +52,7 @@ const AddItem = (props) => {
                     />
                 </label>
                 <label>
-                    <input 
+                    <TextField 
                         type='text'
                         name='item_name'
                         value={formValues.item_name}
@@ -70,7 +61,7 @@ const AddItem = (props) => {
                     />
                 </label>
                 <label>
-                    <input 
+                    <TextField 
                         type='number'
                         name='item_price'
                         value={formValues.item_price}
@@ -80,8 +71,9 @@ const AddItem = (props) => {
                 </label>
                 <button>Submit</button>
             </form>
+        </>
     )
 }
 
-export default connect(null, {fetchItems})(AddItem)
+export default AddItem
 

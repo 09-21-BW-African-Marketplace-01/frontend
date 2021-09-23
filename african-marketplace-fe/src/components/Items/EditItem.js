@@ -1,34 +1,42 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import TextField from '@mui/material/TextField';
+import { connect } from 'react-redux';
 
-const EditItem = () => {
+
+
+const EditItem = (props) => {
+    const { isFetching, itemId } = props
 
     const [item, setItem] =useState({
-        market_name: '',
         item_description: '',
         item_name: '',
         item_price: ''
     })
 
-    const { id } = useParams()
-
+    
     useEffect(() => {
-		axios.get(`https://back-end-african-market.herokuapp.com/api/markets/${id}`)
-			.then(res => {
-				setItem(res.data)
-			})
-			.catch(err => {
-				console.log(err)
-			})
+        axios.get(`https://back-end-african-market.herokuapp.com/api/items/${itemId}`)
+            .then(res => {
+                setItem(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
+    if(isFetching){
+        return <h3>Fetching data...</h3>
+    }
+    
     const handleChange = e => {
         setItem({
-            ...setItem,
+            ...item,
             [e.target.name]:e.target.value
         })
     }
+
 
     const handleSubmit = (e) => {
 		e.preventDefault();
@@ -41,46 +49,51 @@ const EditItem = () => {
 				console.log(err)
 			})
 	}
-
-    const { market_name, item_description, item_name, item_price } = item
+ 
 
     return (
+        <>
     <form onSubmit={handleSubmit}>
-            <label>Market Name</label>
-                <input 
-                    value={market_name} 
-                    onChange={handleChange} 
-                    name="market_name" 
-                    type="text"
-                />
-
-            <label>Item Description</label>
-                <input 
-                    value={item_description} 
+                <TextField 
+                    value={item.item_description} 
                     onChange={handleChange} 
                     name="item_description" 
                     type="text"
+                    placeholder="Item Description"
+                    style={{margin: '5px'}}
                 />   
 
-            <label>Item Name</label>
-                <input 
-                    value={item_name} 
+                <TextField 
+                    value={item.item_name} 
                     onChange={handleChange} 
                     name="item_name" 
                     type="text"
+                    placeholder='Item Name'
+                    style={{margin: '5px'}}
                 />      
 
-            <label>Item Price</label>
-                <input 
-                    value={item_price} 
+                <TextField 
+                    value={item.item_price} 
                     onChange={handleChange} 
                     name="item_price" 
                     type="number"
+                    placeholder='Price'
+                    style={{margin: '5px'}}
                 />  
                 
         <button>Submit</button>
     </form>
+    </>
     )
 }
 
-export default EditItem
+const mapStateToProps = state => {
+    return({
+        market: state.reducerMarket.market,
+        isFetching: state.reducerMarket.isFetching,
+        error: state.reducerMarket.error,
+        items: state.reducerItems.items,
+    })
+}
+
+export default connect(mapStateToProps)(EditItem)
