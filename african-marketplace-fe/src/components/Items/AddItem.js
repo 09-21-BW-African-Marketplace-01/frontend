@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
 import axiosWithAuth from '../../utils/axiosWithAuth'
 import { connect } from 'react-redux'
-import { fetchItems } from '../../actions'
 
 const initialFormValues = {
     market_id: '',
@@ -13,13 +11,10 @@ const initialFormValues = {
 
 const AddItem = (props) => {
     const [formValues, setFormValues] = useState(initialFormValues)
-    const { fetchItems } = props
-    const { id } = useParams()
-
-    useEffect(() => {
-        fetchItems()
-    },[])
+    const { id } = props
     
+    console.log(id)
+
     
     const handleChange = e => {
         setFormValues({
@@ -83,5 +78,5 @@ const AddItem = (props) => {
     )
 }
 
-export default connect(null, {fetchItems})(AddItem)
+export default AddItem
 
