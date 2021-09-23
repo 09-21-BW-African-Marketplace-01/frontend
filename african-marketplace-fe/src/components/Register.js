@@ -122,36 +122,6 @@ const Register = () => {
         </Box>
       </Container>
     </ThemeProvider>
-        
-        // <div className='form-body'>
-        //     <form>
-        //         <label>Name: </label>
-        //             <input 
-        //             type='text'
-        //             name='name'
-        //             value={newUser.name}
-        //             placeholder='Name'
-        //             onChange={handleChange}
-        //             />
-        //         <label>Username: </label>
-        //             <input 
-        //             type='text'
-        //             name='username'
-        //             value={newUser.username}
-        //             placeholder='Username'
-        //             onChange={handleChange}
-        //             />
-        //         <label>Password: </label>
-        //             <input 
-        //             type='password'
-        //             name='password'
-        //             value={newUser.password}
-        //             placeholder='password'
-        //             onChange={handleChange}
-        //             />
-        //         <Button onClick={handleSubmit}>Register</Button>
-        //     </form>
-        // </div>
     )
 }
 
