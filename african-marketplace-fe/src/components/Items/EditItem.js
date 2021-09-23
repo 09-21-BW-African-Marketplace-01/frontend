@@ -1,12 +1,14 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import TextField from '@mui/material/TextField';
+import { connect } from 'react-redux';
+import { getMarket } from '../../actions/marketAction';
 
 
-const EditItem = () => {
+const EditItem = (props) => {
+    const { isFetching, getMarket } = props
 
     const [item, setItem] =useState({
-        market_name: '',
         item_description: '',
         item_name: '',
         item_price: ''
@@ -15,21 +17,21 @@ const EditItem = () => {
     const id = localStorage.getItem('user_id')
 
     useEffect(() => {
-		axios.get(`https://back-end-african-market.herokuapp.com/api/markets/${id}`)
-			.then(res => {
-				setItem(res.data)
-			})
-			.catch(err => {
-				console.log(err)
-			})
+        getMarket(id)
 	}, [])
 
+    if(isFetching){
+        return <h3>Fetching data...</h3>
+    }
+    
     const handleChange = e => {
         setItem({
             ...setItem,
             [e.target.name]:e.target.value
         })
     }
+
+    console.log(item)
 
     const handleSubmit = (e) => {
 		e.preventDefault();
@@ -43,21 +45,17 @@ const EditItem = () => {
 			})
 	}
 
-    // const { market_name, item_description, item_name, item_price } = item
-
-    // console.log('this is the item log in edit',item)
-    // console.log('this is the id log in edit', id)
-    // console.log(item.items.map(details => details))
 
     
 
     return (
         <>
-        <form onSubmit={handleSubmit} style={{marginTop: '20px'}}>
+        
         {/* {
-            item.items.map((details, idx) => {
+            market.items.map((details, idx) => {
                 return(
-                    <>
+                <form onSubmit={handleSubmit} style={{marginTop: '20px'}}>
+                    <div key={idx}>
                             <TextField 
                                 value={details.item_description} 
                                 onChange={handleChange} 
@@ -82,16 +80,17 @@ const EditItem = () => {
                                 label='Price'
                                 style={{margin: '5px'}}
                             />  
-                </>
+                        </div>
+                    <button>Submit</button>
+                    </form> 
                 )
             })
         } */}
-        <button>Submit</button>
-        </form> 
-    {/* <form onSubmit={handleSubmit}>
+
+    <form onSubmit={handleSubmit}>
             <label>Item Description</label>
                 <input 
-                    value={item_description} 
+                    value={item.item_description} 
                     onChange={handleChange} 
                     name="item_description" 
                     type="text"
@@ -99,7 +98,7 @@ const EditItem = () => {
 
             <label>Item Name</label>
                 <input 
-                    value={item_name} 
+                    value={item.item_name} 
                     onChange={handleChange} 
                     name="item_name" 
                     type="text"
@@ -107,16 +106,25 @@ const EditItem = () => {
 
             <label>Item Price</label>
                 <input 
-                    value={item_price} 
+                    value={item.item_price} 
                     onChange={handleChange} 
                     name="item_price" 
                     type="number"
                 />  
                 
         <button>Submit</button>
-    </form> */}
+    </form>
     </>
     )
 }
 
-export default EditItem
+const mapStateToProps = state => {
+    return({
+        market: state.reducerMarket.market,
+        isFetching: state.reducerMarket.isFetching,
+        error: state.reducerMarket.error,
+        items: state.reducerItems.items,
+    })
+}
+
+export default connect(mapStateToProps, { getMarket })(EditItem)

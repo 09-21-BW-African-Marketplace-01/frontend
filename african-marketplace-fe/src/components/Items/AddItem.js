@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import axiosWithAuth from '../../utils/axiosWithAuth'
-import { connect } from 'react-redux'
 
 const initialFormValues = {
     market_id: '',
@@ -12,19 +11,13 @@ const initialFormValues = {
 const AddItem = (props) => {
     const [formValues, setFormValues] = useState(initialFormValues)
     const { id } = props
-    
-    console.log(id)
-
-    
+      
     const handleChange = e => {
         setFormValues({
             ...formValues,
             [e.target.name]:e.target.value
         })
     }
-
-
-
 
     const handleSubmit = e => {
         e.preventDefault()

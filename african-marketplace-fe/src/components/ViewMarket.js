@@ -35,7 +35,6 @@ const ViewMarket = (props) => {
         return <h3>Fetching data...</h3>
     }
 
-    console.log(market)
 
     return (
         <div>
