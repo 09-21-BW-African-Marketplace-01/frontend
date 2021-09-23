@@ -32,7 +32,6 @@ const ProfileItem = (props) => {
     
 
     const { item } = props;
-    console.log('test--------------------------',item)
     const classes = useStyles();
     return (
         <Card className={classes.root} >
