@@ -8,17 +8,18 @@ import { fetchUserStart, fetchUserSuccess, fetchUserFail } from './../../actions
 
 const Profile = (props) => {
     const userMarket = props.userMarket.userMarket;
-    const error = props.userMarket.error;
-    const userMarketItems= userMarket.items;
+    const { fetchUserStart, fetchUserSuccess, fetchUserFail} = props;
+    // const error = props.userMarket.error;
+    // const userMarketItems= userMarket.items;
  
     useEffect(() =>{
         axios.get(`https://back-end-african-market.herokuapp.com/api/markets/${userMarket.user_id}`)
         .then(resp => {
-            props.fetchUserStart();
-            props.fetchUserSuccess(resp.data)
+            fetchUserStart();
+            fetchUserSuccess(resp.data)
         })
         .catch(err=>{
-            props.fetchUserFail('No Markets to Display. Create Market');
+            fetchUserFail('No Markets to Display');
         })
     },[])
 

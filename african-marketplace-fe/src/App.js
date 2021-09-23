@@ -5,6 +5,7 @@ import PrivateRoute from './utils/PrivateRoute';
 
 import ItemCard from './components/Items/ItemCard';
 import NavBar from './components/NavBar';
+import CreateMarket from './components/Profile/CreateMarket';
 import Profile from './components/Profile/Profile';
 import Login from './components/Login';
 import Logout from './components/Logout';
@@ -22,6 +23,7 @@ function App() {
       <NavBar isLoggedIn={isLoggedIn}/>
       <Switch>
         <Route path='/edit' component={EditItem} />
+        <PrivateRoute path='/profile/createmarket' component={CreateMarket}/>
         <Route path='/market/:id' component={ViewMarket} />  
         <Route path='/market' component={ItemCard} />
         <PrivateRoute path='/profile/' component={Profile}/>
