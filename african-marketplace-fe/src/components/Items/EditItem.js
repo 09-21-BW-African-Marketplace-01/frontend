@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import TextField from '@mui/material/TextField';
+
 
 const EditItem = () => {
 
@@ -11,7 +12,7 @@ const EditItem = () => {
         item_price: ''
     })
 
-    const { id } = useParams()
+    const id = localStorage.getItem('user_id')
 
     useEffect(() => {
 		axios.get(`https://back-end-african-market.herokuapp.com/api/markets/${id}`)
@@ -42,18 +43,52 @@ const EditItem = () => {
 			})
 	}
 
-    const { market_name, item_description, item_name, item_price } = item
+    // const { market_name, item_description, item_name, item_price } = item
+
+    // console.log('this is the item log in edit',item)
+    // console.log('this is the id log in edit', id)
+    // console.log(item.items.map(details => details))
+
+    
 
     return (
-    <form onSubmit={handleSubmit}>
-            <label>Market Name</label>
-                <input 
-                    value={market_name} 
-                    onChange={handleChange} 
-                    name="market_name" 
-                    type="text"
-                />
-
+        <>
+        <form onSubmit={handleSubmit} style={{marginTop: '20px'}}>
+        {/* {
+            item.items.map((details, idx) => {
+                return(
+                    <>
+                            <TextField 
+                                value={details.item_description} 
+                                onChange={handleChange} 
+                                name="item_description" 
+                                label="Item Description"
+                                type="text"
+                                style={{margin: '5px'}}
+                            />   
+                            <TextField 
+                                value={details.item_name} 
+                                onChange={handleChange} 
+                                name="item_name" 
+                                type="text"
+                                label='Item Name'
+                                style={{margin: '5px'}}
+                            />      
+                            <TextField 
+                                value={details.item_price} 
+                                onChange={handleChange} 
+                                name="item_price" 
+                                type="number"
+                                label='Price'
+                                style={{margin: '5px'}}
+                            />  
+                </>
+                )
+            })
+        } */}
+        <button>Submit</button>
+        </form> 
+    {/* <form onSubmit={handleSubmit}>
             <label>Item Description</label>
                 <input 
                     value={item_description} 
@@ -79,7 +114,8 @@ const EditItem = () => {
                 />  
                 
         <button>Submit</button>
-    </form>
+    </form> */}
+    </>
     )
 }
 

@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { useParams, useRouteMatch } from 'react-router'
+import { useParams } from 'react-router'
 import { getMarket } from '../actions/marketAction'
-import AddItem from './Items/AddItem'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -25,9 +24,7 @@ const ViewMarket = (props) => {
     const classes = useStyles();
     const { getMarket, market, error, isFetching} = props
     const{ id } = useParams()
-    let match = useRouteMatch()
 
-    console.log(match)
 
     useEffect(() => {
         getMarket(id)
@@ -43,9 +40,6 @@ const ViewMarket = (props) => {
     return (
         <div>
             <h1>Welcome to {market.market_name}</h1>
-            {
-                <AddItem />
-            }
             {
                 error && <div>Error: {error}</div>
             }
