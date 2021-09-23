@@ -1,47 +1,50 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { Button } from '@mui/material';
 
-const ProfileItems = (props) => {
-    const { item } = props;
-    const { push } = useHistory();
-        return (
-            <div>
-                <h3>{item.item_name}</h3>
-                <h4>{item.item_description}</h4>
-                <h4>${item.item_price}</h4>
-                <Button onClick={push('/')}>Edit</Button>
-            </div>
-        )}
+import { fetchUserStart, fetchUserSuccess, fetchUserFail } from '../actions/userMarketAction';
+
 
 const Profile = (props) => {
-    const id = localStorage.getItem('user_id');
-    const [marketInfo, setMarketInfo] = useState({});
-    let marketItems = marketInfo.items;
-
+    const { push } = useHistory();
+    const userMarket = props.userMarket.userMarket;
+    const userMarketItems= userMarket.items;
+ 
     useEffect(() =>{
-        axios.get(`https://back-end-african-market.herokuapp.com/api/markets/${id}`)
+        axios.get(`https://back-end-african-market.herokuapp.com/api/markets/${userMarket.user_id}`)
         .then(resp => {
-            console.log(resp.data)
-            setMarketInfo(resp.data)
+            props.fetchUserStart();
+            props.fetchUserSuccess(resp.data)
         })
         .catch(err=>{
-            console.error(err);
+            props.fetchUserFail(err);
         })
     },[])
 
-    console.log(marketItems)
-
     return(
         <div className='profile-card'> 
-            <h1>It's good to see you back {marketInfo.name}</h1>
-            <h2>{marketInfo.market_name}</h2>
-            {/* {marketItems.map(item => {
-                console.log(item)
-                console.log('checking id', id)
-            })} */}
+            <h1>It's good to see you back {userMarket.name}</h1>
+            <h2>{userMarket.market_name}</h2>
+            {userMarketItems.map(item => {
+                return(<div>
+                    <h3>{item.item_name}</h3>
+                    <h4>{item.item_description}</h4>
+                    <h4>${item.item_price}</h4>
+                    <Button>Edit</Button>
+                </div>)
+                
+            })}
         </div>
     )
 }
-export default Profile;
+
+const mapStateToProps = (state) => {
+    return({
+        userMarket: state.userMarket
+    })
+
+}
+
+export default connect(mapStateToProps, { fetchUserStart, fetchUserSuccess, fetchUserFail })(Profile);
