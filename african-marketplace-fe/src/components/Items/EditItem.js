@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 
 
+
 const EditItem = (props) => {
     const { isFetching, itemId } = props
 
@@ -40,7 +41,7 @@ const EditItem = (props) => {
 
     const handleSubmit = (e) => {
 		e.preventDefault();
-		axios.put(``, item)
+		axios.put(`https://back-end-african-market.herokuapp.com/api/items/${itemId}`, item)
 			.then(res => {
 				console.log(res)
 				setItem(res.data)

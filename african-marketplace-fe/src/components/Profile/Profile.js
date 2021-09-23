@@ -21,6 +21,7 @@ const Profile = (props) => {
         .catch(err=>{
             fetchUserFail('No Markets to Display');
         })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     return(
