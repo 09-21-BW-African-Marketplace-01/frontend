@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axiosWithAuth from '../../utils/axiosWithAuth'
 import TextField from '@mui/material/TextField';
 
+
 const initialFormValues = {
     market_id: '',
     item_description: '',
@@ -12,6 +13,9 @@ const initialFormValues = {
 const AddItem = (props) => {
     const [formValues, setFormValues] = useState(initialFormValues)
     const { id } = props
+
+    const [ post, setPost ] = useState([])
+
       
     const handleChange = e => {
         setFormValues({
@@ -31,11 +35,12 @@ const AddItem = (props) => {
         axiosWithAuth()
             .post('https://back-end-african-market.herokuapp.com/api/items/', newItem)
             .then(res => {
-                console.log(res)
+                setPost(res.data)
             })
             .catch(err => {
                 console.log(err)
             })
+        setFormValues(initialFormValues)
     }
 
     return (
@@ -69,7 +74,7 @@ const AddItem = (props) => {
                         placeholder='price'
                     />
                 </label>
-                <button>Submit</button>
+                <input type="submit" value="Add"/>
             </form>
         </>
     )

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import EditItem from '../Items/EditItem';
 
@@ -7,6 +7,8 @@ const useStyles = makeStyles({
     root: {
       minWidth: 300,
       margin: 2,
+      display: 'flex',
+      flexFlow: 'row wrap'
     },
     title: {
       fontSize: '1rem',
@@ -29,7 +31,6 @@ const ProfileItem = (props) => {
 
 
     const { item } = props;
-    console.log(item)
     const classes = useStyles();
     return (
         <Card className={classes.root} >

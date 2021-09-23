@@ -28,6 +28,7 @@ const ProfileDisplay = (props) => {
     const [toggle, setToggle] = useState(false)
     console.log('profile display', userMarket)
 
+
         const DisplayError = () => {
             return (
                 <div className='display-error' >
