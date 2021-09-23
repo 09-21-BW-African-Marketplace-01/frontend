@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import axiosWithAuth from '../../utils/axiosWithAuth'
-
+import { connect } from 'react-redux'
+import { fetchItems } from '../../actions'
 
 const initialFormValues = {
     market_id: '',
@@ -10,18 +11,24 @@ const initialFormValues = {
     item_price: ''
 }
 
-const AddItem = () => {
+const AddItem = (props) => {
     const [formValues, setFormValues] = useState(initialFormValues)
+    const { fetchItems } = props
     const { id } = useParams()
 
-    console.log(id)
-
+    useEffect(() => {
+        fetchItems()
+    },[])
+    
+    
     const handleChange = e => {
         setFormValues({
             ...formValues,
             [e.target.name]:e.target.value
         })
     }
+
+
 
 
     const handleSubmit = e => {
@@ -76,5 +83,5 @@ const AddItem = () => {
     )
 }
 
-export default AddItem
+export default connect(null, {fetchItems})(AddItem)
 

@@ -7,7 +7,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { useRouteMatch } from 'react-router';
+import { useParams, useRouteMatch } from 'react-router';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
@@ -29,12 +29,9 @@ const useStyles = makeStyles({
 
 const ItemCard = (props) => {
     const classes = useStyles();
-    const{items, isFetching, error, fetchItems} = props
-
+    const{ items, isFetching, error, fetchItems } = props
+    // console.log(props)
     let match = useRouteMatch()
-    console.log('log of match in itemCard', match)
-    console.log(items)
-
 
     useEffect(() => {
         fetchItems()

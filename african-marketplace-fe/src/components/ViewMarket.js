@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { useParams } from 'react-router'
+import { useParams, useRouteMatch } from 'react-router'
 import { getMarket } from '../actions/marketAction'
 import AddItem from './Items/AddItem'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+
 
 
 const useStyles = makeStyles({
@@ -22,9 +23,11 @@ const useStyles = makeStyles({
 
 const ViewMarket = (props) => {
     const classes = useStyles();
-    const { getMarket, market, error, isFetching } = props
+    const { getMarket, market, error, isFetching} = props
     const{ id } = useParams()
-    console.log(props)
+    let match = useRouteMatch()
+
+    console.log(match)
 
     useEffect(() => {
         getMarket(id)
@@ -40,7 +43,9 @@ const ViewMarket = (props) => {
     return (
         <div>
             <h1>Welcome to {market.market_name}</h1>
-            <p>In stock we have: </p>
+            {
+                <AddItem />
+            }
             {
                 error && <div>Error: {error}</div>
             }
@@ -60,9 +65,7 @@ const ViewMarket = (props) => {
                     )
                 })
             }
-            {
-                market.market_id === market.user_id ? <AddItem/> : <div></div>
-            }
+
         </div>
     )
 }
@@ -71,7 +74,8 @@ const mapStateToProps = state => {
     return({
         market: state.reducerMarket.market,
         isFetching: state.reducerMarket.isFetching,
-        error: state.reducerMarket.error
+        error: state.reducerMarket.error,
+        items: state.reducerItems.items,
     })
 }
 
