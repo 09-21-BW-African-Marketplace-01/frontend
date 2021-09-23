@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import ProfileItem from './ProfileItem';
+
+import ProfileDisplay from './ProfileDisplay';
 import { fetchUserStart, fetchUserSuccess, fetchUserFail } from './../../actions/userMarketAction'
 
 
 const Profile = (props) => {
     const userMarket = props.userMarket.userMarket;
+    const error = props.userMarket.error;
     const userMarketItems= userMarket.items;
  
     useEffect(() =>{
@@ -16,18 +18,12 @@ const Profile = (props) => {
             props.fetchUserSuccess(resp.data)
         })
         .catch(err=>{
-            props.fetchUserFail(err);
+            props.fetchUserFail('No Markets to Display. Create Market');
         })
     },[])
 
     return(
-        <div className='profile-card'> 
-            <h1>It's good to see you back {userMarket.name}</h1>
-            <h2>{userMarket.market_name}</h2>
-            {userMarketItems.map(item => {
-                return <ProfileItem key={item.item_id} item={item}/>
-            })}
-        </div>
+        <ProfileDisplay />
     )
 }
 
@@ -35,7 +31,6 @@ const mapStateToProps = (state) => {
     return({
         userMarket: state.userMarket
     })
-
 }
 
 export default connect(mapStateToProps, { fetchUserStart, fetchUserSuccess, fetchUserFail })(Profile);

@@ -19,14 +19,12 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
+      <NavBar isLoggedIn={isLoggedIn}/>
       <Switch>
         <Route path='/edit' component={EditItem} />
         <Route path='/market/:id' component={ViewMarket} />  
         <Route path='/market' component={ItemCard} />
-        <PrivateRoute path='/profile/'>
-          <Profile isLoggedIn={isLoggedIn}/>
-        </PrivateRoute>
+        <PrivateRoute path='/profile/' component={Profile}/>
         <Route path='/register' component={Register}/>
         <PrivateRoute path='/logout'>
           <Logout />
