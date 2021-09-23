@@ -18,18 +18,6 @@ const useStyles = makeStyles({
 
 const NavBar = () => {
   const classes = useStyles();
-  const isLoggedIn = localStorage.getItem('token'); 
-  const showOnLoggedIn = (componentToShow) => {
-    return (
-      isLoggedIn ? componentToShow : ''
-    )
-  } 
-
-  const showOnLoggedOut = (componentToShow) => {
-    return (
-      isLoggedIn ? '' : componentToShow
-    )
-  }
 
     return (
     <Box sx={{ flexGrow: 1 }}>
@@ -42,10 +30,10 @@ const NavBar = () => {
           </div>
 
           <div className={classes.buttons}>
-            {showOnLoggedIn(<Button href='/profile' color="inherit">Profile</Button>)}
-            {showOnLoggedOut(<Button href='/register' color='inherit'>Register</Button>)}
-            {showOnLoggedOut(<Button href='/login' color="inherit">Login</Button>)}
-            {showOnLoggedIn(<Button href='/logout' color="inherit">Logout</Button>)}
+            <Button href='/profile' color="inherit">Profile</Button>
+            <Button href='/register' color='inherit'>Register</Button>
+            <Button href='/login' color="inherit">Login</Button>
+            <Button href='/logout' color="inherit">Logout</Button>
 
             
           </div>
