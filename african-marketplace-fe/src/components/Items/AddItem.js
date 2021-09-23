@@ -14,7 +14,6 @@ const AddItem = (props) => {
     const [formValues, setFormValues] = useState(initialFormValues)
     const { id } = props
 
-    const [ post, setPost ] = useState([])
 
       
     const handleChange = e => {
@@ -35,7 +34,7 @@ const AddItem = (props) => {
         axiosWithAuth()
             .post('https://back-end-african-market.herokuapp.com/api/items/', newItem)
             .then(res => {
-                setPost(res.data)
+                console.log(res)
             })
             .catch(err => {
                 console.log(err)

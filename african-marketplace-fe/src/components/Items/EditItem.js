@@ -8,14 +8,14 @@ import { connect } from 'react-redux';
 
 const EditItem = (props) => {
     const { isFetching, itemId } = props
-
+    
     const [item, setItem] =useState({
         item_description: '',
         item_name: '',
         item_price: ''
     })
 
-    
+       
     useEffect(() => {
         axios.get(`https://back-end-african-market.herokuapp.com/api/items/${itemId}`)
             .then(res => {
@@ -43,7 +43,6 @@ const EditItem = (props) => {
 		e.preventDefault();
 		axios.put(`https://back-end-african-market.herokuapp.com/api/items/${itemId}`, item)
 			.then(res => {
-				console.log(res)
 				setItem(res.data)
 			})
 			.catch(err => {

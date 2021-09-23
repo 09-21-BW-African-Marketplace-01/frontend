@@ -29,6 +29,7 @@ const ProfileItem = (props) => {
     const [showResults, setShowResults] = useState(false)
     const onClick = () => setShowResults(true)
 
+    
 
     const { item } = props;
     const classes = useStyles();
