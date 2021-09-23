@@ -16,8 +16,9 @@ const useStyles = makeStyles({
 })
 
 
-const NavBar = () => {
+const NavBar = (props) => {
   const classes = useStyles();
+  const { isLoggedIn } = props;
 
     return (
     <Box sx={{ flexGrow: 1 }}>
@@ -32,7 +33,7 @@ const NavBar = () => {
           <div className={classes.buttons}>
             <Button href='/' color="inherit">Home</Button>
             <Button href='/profile' color="inherit">Profile</Button>
-            <Button href='/login' color="inherit">Login</Button>
+            <Button href={isLoggedIn ? '/' : '/login' } color="inherit">Login</Button>
             <Button href='/logout' color="inherit">Logout</Button>
           </div>
         </Toolbar>
