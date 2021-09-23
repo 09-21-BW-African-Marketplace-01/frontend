@@ -26,6 +26,7 @@ const ProfileDisplay = (props) => {
     const { push } = useHistory();
 
     const [toggle, setToggle] = useState(false)
+    console.log('profile display', userMarket)
 
 
         const DisplayError = () => {
