@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -23,7 +23,7 @@ const ProfileDisplay = (props) => {
     const error = props.userMarket.error;
     const userMarketItems= userMarket.items;
     const classes = useStyles();
-    const { push } = useHistory();
+    // const { push } = useHistory();
 
     const [toggle, setToggle] = useState(false)
     console.log('profile display', userMarket)
