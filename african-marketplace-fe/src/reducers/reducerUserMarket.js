@@ -1,27 +1,33 @@
-import { FETCH_START_USER, FETCH_SUCCESS_USER, FETCH_FAIL_USER } from "../actions/userAction";
+import { FETCH_START_USERMARKET, FETCH_SUCCESS_USERMARKET, FETCH_FAIL_USERMARKET } from "../actions/userMarketAction";
 
 const initialState = {
-    user:{},
+    userMarket:{
+        items: [],
+        market_id: null,
+        market_name: '',
+        name: '',
+        user_id: localStorage.getItem('user_id')
+    },
     isFetching:false,
     error:''
-}
+} 
 
-export const reducerUser = (state = initialState, action) => {
+export const reducerUserMarket = (state = initialState, action) => {
     switch(action.type){
-        case(FETCH_START_USER):
+        case(FETCH_START_USERMARKET):
             return ({
                 ...state,
                 isFetching: true,
                 error: ''
             })
-        case(FETCH_SUCCESS_USER):
+        case(FETCH_SUCCESS_USERMARKET):
             return ({
                 ...state,
-                user: action.payload,
+                userMarket: action.payload,
                 isFetching: false,
                 error: ''
             })
-        case(FETCH_FAIL_USER):
+        case(FETCH_FAIL_USERMARKET):
             return ({
                 ...state,
                 isFetching: false,
