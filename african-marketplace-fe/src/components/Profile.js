@@ -8,12 +8,12 @@ const Profile = (props) => {
     const { isLoggedIn } = props;
     const { push } = useHistory();
 
-    useEffect(() =>{
-        axios.get(`https://back-end-african-market.herokuapp.com/api/markets/${id}`)
-        .then(resp => {
-            console.log('profile resp', resp)
-        })
-    },[])
+    // useEffect(() =>{
+    //     axios.get(`https://back-end-african-market.herokuapp.com/api/markets/${id}`)
+    //     .then(resp => {
+    //         console.log('profile resp', resp)
+    //     })
+    // },[])
 
 
     return(

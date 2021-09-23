@@ -1,6 +1,20 @@
 import React, { useState } from 'react';
-import Button from '@mui/material/Button';
+import { 
+    Button,
+    Avatar,
+    CssBaseline,
+    TextField,
+    Link,
+    Grid,
+    Box,
+    Typography,
+    Container
+ } from '@mui/material';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import  { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import axios from 'axios';
+
+const theme = createTheme();
 
 const Register = () => {
     
@@ -29,35 +43,115 @@ const Register = () => {
     }
 
     return (
-        <div className='form-body'>
-            <form>
-                <label>Name: </label>
-                    <input 
-                    type='text'
-                    name='name'
-                    value={newUser.name}
-                    placeholder='Name'
-                    onChange={handleChange}
-                    />
-                <label>Username: </label>
-                    <input 
-                    type='text'
-                    name='username'
-                    value={newUser.username}
-                    placeholder='Username'
-                    onChange={handleChange}
-                    />
-                <label>Password: </label>
-                    <input 
-                    type='password'
-                    name='password'
-                    value={newUser.password}
-                    placeholder='password'
-                    onChange={handleChange}
-                    />
-                <Button onClick={handleSubmit}>Register</Button>
-            </form>
-        </div>
+        <ThemeProvider theme={theme}>
+            <Container component="main" maxWidth="xs">
+                <CssBaseline />
+                <Box
+                    sx={{
+                        marginTop: 8,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                    }}
+                >
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign up
+          </Typography>
+          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <TextField
+                  value={newUser.name}
+                  onChange={handleChange}
+                  autoComplete="name"
+                  name="name"
+                  required
+                  fullWidth
+                  id="name"
+                  label="Name"
+                  autoFocus
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  value={newUser.username}
+                  onChange={handleChange}
+                  required
+                  fullWidth
+                  id="username"
+                  label="Username"
+                  name="username"
+                  autoComplete="username"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  value={newUser.password}
+                  onChange={handleChange}
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
+                />
+              </Grid>
+              <Grid item xs={12}>
+              </Grid>
+            </Grid>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Sign Up
+            </Button>
+            <Grid container justifyContent="flex-end">
+              <Grid item>
+                <Link href="/login" variant="body2">
+                  Already have an account? Sign in
+                </Link>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+      </Container>
+    </ThemeProvider>
+        
+        // <div className='form-body'>
+        //     <form>
+        //         <label>Name: </label>
+        //             <input 
+        //             type='text'
+        //             name='name'
+        //             value={newUser.name}
+        //             placeholder='Name'
+        //             onChange={handleChange}
+        //             />
+        //         <label>Username: </label>
+        //             <input 
+        //             type='text'
+        //             name='username'
+        //             value={newUser.username}
+        //             placeholder='Username'
+        //             onChange={handleChange}
+        //             />
+        //         <label>Password: </label>
+        //             <input 
+        //             type='password'
+        //             name='password'
+        //             value={newUser.password}
+        //             placeholder='password'
+        //             onChange={handleChange}
+        //             />
+        //         <Button onClick={handleSubmit}>Register</Button>
+        //     </form>
+        // </div>
     )
 }
 

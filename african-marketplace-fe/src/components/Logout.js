@@ -5,6 +5,7 @@ const Logout = (props) => {
     const { push } = useHistory();
 
     localStorage.removeItem('token');
+    localStorage.removeItem('user_id');
     push('/')
     
     return (<div></div>)

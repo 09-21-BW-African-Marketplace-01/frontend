@@ -4,9 +4,7 @@ import {
     TextField,
     Grid,
     Paper,
-    AppBar,
     Typography,
-    Toolbar,
     Link,
     } from "@material-ui/core";
 import { useHistory } from 'react-router-dom';
@@ -34,7 +32,9 @@ const Login = () => {
         e.preventDefault();
         axios.post('https://back-end-african-market.herokuapp.com/api/users/login', credentials)
             .then(resp => {
+                console.log('login resp', resp.data)
                 localStorage.setItem('token', resp.data.token)
+                localStorage.setItem('user_id',resp.data.user_id)
                 setCredentials({
                     username:'',
                     password:''
@@ -120,32 +120,6 @@ const Login = () => {
         </Grid>
         </Grid>
         </div>
-
-
-        // <div>
-        //     <form>
-        //         <label>Username: </label>
-        //         <input 
-        //         type='text'
-        //         name='username'
-        //         value={credentials.username}
-        //         placeholder='username'
-        //         onChange={handleChange}
-        //         />
-
-        //         <label>Password: </label>
-        //         <input 
-        //         type='password'
-        //         name='password'
-        //         value={credentials.password}
-        //         placeholder='password'
-        //         onChange={handleChange}
-        //         />
-        //         <Button onClick={handleSubmit}>Log in</Button>
-        //         {error ? <p>Error!</p> : ''}
-        //     </form>
-            
-        // </div>
     )
 }
 
