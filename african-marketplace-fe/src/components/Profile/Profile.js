@@ -3,21 +3,15 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 
 import ProfileDisplay from './ProfileDisplay';
-import { fetchUserStart, fetchUserSuccess, fetchUserFail } from './../../actions/userMarketAction'
+
+import { fetchUserMarker } from './../../actions/userMarketAction';
 
 const Profile = (props) => {
     const userMarket = props.userMarket.userMarket;
-    const { fetchUserStart, fetchUserSuccess, fetchUserFail} = props;
+    const { fetchUserMarker } = props;
 
      useEffect(() =>{
-        axios.get(`https://back-end-african-market.herokuapp.com/api/markets/${userMarket.user_id}`)
-        .then(resp => {
-            fetchUserStart();
-            fetchUserSuccess(resp.data)
-        })
-        .catch(err=>{
-            fetchUserFail('No Markets to Display');
-        })
+        fetchUserMarker(userMarket.user_id)
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     return(
@@ -31,4 +25,4 @@ const mapStateToProps = (state) => {
     })
 }
 
-export default connect(mapStateToProps, { fetchUserStart, fetchUserSuccess, fetchUserFail })(Profile);
+export default connect(mapStateToProps, { fetchUserMarker })(Profile);

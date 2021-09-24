@@ -11,6 +11,7 @@ const useStyles = makeStyles({
     displaySuccess:{
         display:'flex',
         border:'1px red, solid',
+        width: '100%'
     },
     div: {
         display: 'flex',
@@ -27,7 +28,7 @@ const useStyles = makeStyles({
         justifyContent:'flex-start',
         padding:'3rem',
         margin:'4rem',
-        width:'100rem'
+        width:'100%'
 
     },
    
