@@ -10,7 +10,7 @@ import CreateMarket from './CreateMarket';
 const useStyles = makeStyles({
     displaySuccess:{
         display:'flex',
-        border:'1px red, solid'
+        border:'1px red, solid',
     },
     div: {
         display: 'flex',
