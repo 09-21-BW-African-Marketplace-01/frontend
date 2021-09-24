@@ -38,9 +38,7 @@ const ProfileDisplay = (props) => {
     const error = props.userMarket.error;
     const userMarketItems= userMarket.items;
     const classes = useStyles();
-    const [toggle, setToggle] = useState(false)
-
-    console.log('profile display', userMarket)
+    const [toggle, setToggle] = useState(false);
 
         const DisplayError = () => {
             return (
