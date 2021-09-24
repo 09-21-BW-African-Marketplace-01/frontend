@@ -2,19 +2,19 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import TextField from '@mui/material/TextField';
 import { connect } from 'react-redux';
-
+import { fetchUserMarker } from '../../actions/userMarketAction';
 
 
 
 const EditItem = (props) => {
-    const { isFetching, itemId } = props
+    const { isFetching, itemId, fetchUserMarker} = props
+    const userMarket = props.userMarket.userMarket
     
     const [item, setItem] =useState({
         item_description: '',
         item_name: '',
         item_price: ''
     })
-
        
     useEffect(() => {
         axios.get(`https://back-end-african-market.herokuapp.com/api/items/${itemId}`)
@@ -45,10 +45,11 @@ const EditItem = (props) => {
 			.then(res => {
 				setItem(res.data)
                 props.onClick();
+                fetchUserMarker(userMarket.market_id)
 			})
 			.catch(err => {
 				console.log(err)
-			})
+			})      
 	}
  
 
@@ -94,7 +95,8 @@ const mapStateToProps = state => {
         isFetching: state.reducerMarket.isFetching,
         error: state.reducerMarket.error,
         items: state.reducerItems.items,
+        userMarket: state.userMarket
     })
 }
 
-export default connect(mapStateToProps)(EditItem)
+export default connect(mapStateToProps, { fetchUserMarker })(EditItem)

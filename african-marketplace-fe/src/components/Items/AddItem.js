@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import axiosWithAuth from '../../utils/axiosWithAuth'
 import TextField from '@mui/material/TextField';
-
+import { connect } from 'react-redux';
+import { fetchUserMarker } from '../../actions/userMarketAction';
 
 const initialFormValues = {
     market_id: '',
@@ -12,9 +13,9 @@ const initialFormValues = {
 
 const AddItem = (props) => {
     const [formValues, setFormValues] = useState(initialFormValues)
-    const { id } = props
+    const { id, fetchUserMarker } = props
 
-
+ 
       
     const handleChange = e => {
         setFormValues({
@@ -35,11 +36,13 @@ const AddItem = (props) => {
             .post('https://back-end-african-market.herokuapp.com/api/items/', newItem)
             .then(res => {
                 console.log(res)
+                fetchUserMarker(id)
             })
             .catch(err => {
                 console.log(err)
             })
         setFormValues(initialFormValues)
+        fetchUserMarker(id)
     }
 
     return (
@@ -79,5 +82,11 @@ const AddItem = (props) => {
     )
 }
 
-export default AddItem
+const mapStateToProps = (state) => {
+    return({
+        userMarket: state.userMarket
+    })
+}
+
+export default connect(mapStateToProps, { fetchUserMarker })(AddItem)
 
