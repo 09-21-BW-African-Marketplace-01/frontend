@@ -11,14 +11,13 @@ const useStyles = makeStyles({
     displaySuccess:{
         display:'flex',
         border:'1px red, solid',
-        width: '100%'
     },
     div: {
         display: 'flex',
         flexFlow: 'row wrap',
         justifyContent: 'flex-start',
         width: '100%',
-        margin: '4rem',
+        // margin: '4rem',
     },
     shopCard:{
         display:'flex',
@@ -26,10 +25,9 @@ const useStyles = makeStyles({
         flexWrap:'wrap',
         alignItems:'center',
         justifyContent:'flex-start',
-        padding:'3rem',
-        margin:'4rem',
+        // padding:'3rem',
+        // margin:'4rem',
         width:'100%'
-
     },
    
   });

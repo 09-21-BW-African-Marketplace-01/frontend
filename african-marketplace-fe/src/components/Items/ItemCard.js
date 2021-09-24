@@ -30,7 +30,6 @@ const useStyles = makeStyles({
 const ItemCard = (props) => {
     const classes = useStyles();
     const{ items, isFetching, error, fetchItems } = props
-    // console.log(props)
     let match = useRouteMatch()
 
     useEffect(() => {

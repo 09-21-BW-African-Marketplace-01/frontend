@@ -15,11 +15,6 @@ const EditItem = (props) => {
         item_name: '',
         item_price: ''
     })
-
-    console.log(userMarket.market_id)
-    
-    console.log('props in edititem',props)
-
        
     useEffect(() => {
         axios.get(`https://back-end-african-market.herokuapp.com/api/items/${itemId}`)
