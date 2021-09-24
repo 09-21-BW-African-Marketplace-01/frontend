@@ -35,7 +35,7 @@ const EditItem = (props) => {
         setItem({
             ...item,
             [e.target.name]:e.target.value
-        })
+        })        
     }
 
 
@@ -44,6 +44,7 @@ const EditItem = (props) => {
 		axios.put(`https://back-end-african-market.herokuapp.com/api/items/${itemId}`, item)
 			.then(res => {
 				setItem(res.data)
+                props.onClick();
 			})
 			.catch(err => {
 				console.log(err)
