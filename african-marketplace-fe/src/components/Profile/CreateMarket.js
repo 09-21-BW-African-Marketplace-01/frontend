@@ -33,7 +33,7 @@ const CreateMarket = (props) => {
         e.preventDefault();
         axios.post('https://back-end-african-market.herokuapp.com/api/markets/', market)
             .then(resp => {
-                push('/profile')
+                push('/')
             })
             .catch(err => {
                 console.error(err)

@@ -6,9 +6,10 @@ import EditItem from '../Items/EditItem';
 const useStyles = makeStyles({
     root: {
       minWidth: 300,
-      margin: 2,
+      margin: '.5rem',
       display: 'flex',
-      flexFlow: 'row wrap'
+      flexFlow: 'row wrap',
+      
     },
     title: {
       fontSize: '1rem',
